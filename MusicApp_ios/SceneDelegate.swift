@@ -18,13 +18,47 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
-    let vc = HomeViewController()
-    vc.title = "HOME"
-    let navController = MusicNavigationController(rootViewController: vc)
+    UITabBar.appearance().tintColor = .mainColor()
+    UITabBar.appearance().unselectedItemTintColor = .placeHolderColor()
+    UITabBar.appearance().barTintColor = .backgroundColor()
+    
+    // ViewControllers on TabBar
+    var viewControllers: [UIViewController] = []
+    
+    // Home画面
+    let home = setupTabbar(vc: HomeViewController(), title: "HOME", image: nil)
+    viewControllers.append(home)
+    
+    // Search画面
+    let search = setupTabbar(vc: SearchViewController(), title: "Search", image: nil)
+    viewControllers.append(search)
+    
+    // Home画面
+    let favorite = setupTabbar(vc: FavoriteViewController(), title: "Favorite", image: nil)
+    viewControllers.append(favorite)
+    
+    // Home画面
+    let myPage = setupTabbar(vc: MyPageViewController(), title: "MyPage", image: nil)
+    viewControllers.append(myPage)
+    
+    let tabBarController = UITabBarController()
+    tabBarController.setViewControllers(viewControllers, animated: false)
+    tabBarController.selectedIndex = 0
     
     self.window = UIWindow(windowScene: windowScene)
-    self.window?.rootViewController = navController
+    self.window?.rootViewController = tabBarController
     self.window?.makeKeyAndVisible()
+  }
+  
+  private func setupTabbar(vc: UIViewController, title: String, image: UIImage?) -> UIViewController {
+    let vc = HomeViewController()
+    vc.title = title
+    // TabBarのアイコン
+    let tabBarIcon = UITabBarItem(title: title,
+                                  image: image ?? nil,
+                                  tag: 0)
+    vc.tabBarItem = tabBarIcon
+    return MusicNavigationController(rootViewController: vc)
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {

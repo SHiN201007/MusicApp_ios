@@ -16,6 +16,13 @@
 		06BB4EF5268999D1002B8576 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EF3268999D1002B8576 /* HomeViewController.swift */; };
 		06BB4EF6268999D1002B8576 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4EF4268999D1002B8576 /* HomeViewController.xib */; };
 		06BB4EFA26899A24002B8576 /* MusicNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EF926899A24002B8576 /* MusicNavigationController.swift */; };
+		06BB4EFD2689A6D2002B8576 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EFB2689A6D2002B8576 /* SearchViewController.swift */; };
+		06BB4EFE2689A6D2002B8576 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4EFC2689A6D2002B8576 /* SearchViewController.xib */; };
+		06BB4F022689A6E8002B8576 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4F002689A6E8002B8576 /* FavoriteViewController.swift */; };
+		06BB4F032689A6E8002B8576 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4F012689A6E8002B8576 /* FavoriteViewController.xib */; };
+		06BB4F072689A6FC002B8576 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4F052689A6FC002B8576 /* MyPageViewController.swift */; };
+		06BB4F082689A6FC002B8576 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4F062689A6FC002B8576 /* MyPageViewController.xib */; };
+		06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4F0A2689AA49002B8576 /* UIColorExtension.swift */; };
 		096BABDC86962888E0987FA8 /* Pods_MusicApp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3C2ED490553BAFC59D9BD9 /* Pods_MusicApp_ios.framework */; };
 		3273E7CFE183C726FCEB985D /* libPods-MusicApp_iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8375A61FD8DF1E419B09A2 /* libPods-MusicApp_iosUITests.a */; };
 		5EE38069A54068CC75CB85BE /* libPods-MusicApp_iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B180DABDA4C5D91D17B85093 /* libPods-MusicApp_iosTests.a */; };
@@ -54,6 +61,13 @@
 		06BB4EF3268999D1002B8576 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		06BB4EF4268999D1002B8576 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		06BB4EF926899A24002B8576 /* MusicNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicNavigationController.swift; sourceTree = "<group>"; };
+		06BB4EFB2689A6D2002B8576 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		06BB4EFC2689A6D2002B8576 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		06BB4F002689A6E8002B8576 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		06BB4F012689A6E8002B8576 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		06BB4F052689A6FC002B8576 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		06BB4F062689A6FC002B8576 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
+		06BB4F0A2689AA49002B8576 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		2DDC62A9167A07F59DAD5BD2 /* Pods-MusicApp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosTests/Pods-MusicApp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BA3F46B636B9DA8824E03B /* Pods-MusicApp_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosUITests/Pods-MusicApp_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		796FD70C89CD08017751DBEC /* Pods-MusicApp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_ios.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_ios/Pods-MusicApp_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +135,7 @@
 				06BB4EC326899852002B8576 /* AppDelegate.swift */,
 				06BB4EC526899852002B8576 /* SceneDelegate.swift */,
 				06BB4EF926899A24002B8576 /* MusicNavigationController.swift */,
+				06BB4F0C2689AA4C002B8576 /* Extensions */,
 				06BB4EF7268999D5002B8576 /* Views */,
 				06BB4ECC26899853002B8576 /* Assets.xcassets */,
 				06BB4ECE26899853002B8576 /* LaunchScreen.storyboard */,
@@ -151,6 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				06BB4EF8268999DD002B8576 /* Home */,
+				06BB4EFF2689A6D6002B8576 /* Search */,
+				06BB4F042689A6ED002B8576 /* Favorite */,
+				06BB4F092689A701002B8576 /* MyPage */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +180,41 @@
 				06BB4EF4268999D1002B8576 /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		06BB4EFF2689A6D6002B8576 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				06BB4EFB2689A6D2002B8576 /* SearchViewController.swift */,
+				06BB4EFC2689A6D2002B8576 /* SearchViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		06BB4F042689A6ED002B8576 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				06BB4F002689A6E8002B8576 /* FavoriteViewController.swift */,
+				06BB4F012689A6E8002B8576 /* FavoriteViewController.xib */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		06BB4F092689A701002B8576 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				06BB4F052689A6FC002B8576 /* MyPageViewController.swift */,
+				06BB4F062689A6FC002B8576 /* MyPageViewController.xib */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		06BB4F0C2689AA4C002B8576 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06BB4F0A2689AA49002B8576 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		236EFC313C7F65A221A45F2F /* Frameworks */ = {
@@ -297,7 +350,10 @@
 			files = (
 				06BB4ED026899853002B8576 /* LaunchScreen.storyboard in Resources */,
 				06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */,
+				06BB4EFE2689A6D2002B8576 /* SearchViewController.xib in Resources */,
+				06BB4F032689A6E8002B8576 /* FavoriteViewController.xib in Resources */,
 				06BB4EF6268999D1002B8576 /* HomeViewController.xib in Resources */,
+				06BB4F082689A6FC002B8576 /* MyPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,9 +481,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06BB4EFD2689A6D2002B8576 /* SearchViewController.swift in Sources */,
 				06BB4EC426899852002B8576 /* AppDelegate.swift in Sources */,
+				06BB4F072689A6FC002B8576 /* MyPageViewController.swift in Sources */,
+				06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */,
 				06BB4EC626899852002B8576 /* SceneDelegate.swift in Sources */,
 				06BB4EF5268999D1002B8576 /* HomeViewController.swift in Sources */,
+				06BB4F022689A6E8002B8576 /* FavoriteViewController.swift in Sources */,
 				06BB4EFA26899A24002B8576 /* MusicNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
