@@ -29,7 +29,16 @@ class MusicViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupSlider()
     setupTapGuesture()
+  }
+  
+  private func setupSlider() {
+    musicSlider.rx.value
+      .subscribe(onNext: { value in
+        print(value)
+      })
+      .disposed(by: disposeBag)
   }
   
   private func setupTapGuesture() {
@@ -75,6 +84,7 @@ extension MusicViewController {
     endTimerLabel.textColor = .textColor()
     // slider
     musicSlider.value = 0
+    musicSlider.maximumValue = 100
     musicSlider.minimumTrackTintColor = .mainColor()
     musicSlider.maximumTrackTintColor = .placeHolderColor()
   }
