@@ -17,6 +17,7 @@
                 <outlet property="backView" destination="5MM-CU-efk" id="n1h-da-YKC"/>
                 <outlet property="collectionView" destination="FBx-lS-Dai" id="FsQ-tV-Vnj"/>
                 <outlet property="ranking1ArtistLabel" destination="GMC-h3-Ws6" id="4eG-1U-m6N"/>
+                <outlet property="ranking1BackView" destination="vS2-1R-dlr" id="vXt-bV-y7S"/>
                 <outlet property="ranking1CompareImageView" destination="Igs-pU-m7k" id="WIr-Q5-1Y5"/>
                 <outlet property="ranking1CompareLabel" destination="mNT-tl-CG2" id="xs4-n4-x9a"/>
                 <outlet property="ranking1MenuImageView" destination="0MY-5g-hsm" id="iY5-jT-AHA"/>
@@ -24,6 +25,7 @@
                 <outlet property="ranking1PreViewLabel" destination="1Ac-nE-3MU" id="Srt-xC-Uwt"/>
                 <outlet property="ranking1TitleLabel" destination="ZcE-KX-ZAM" id="jox-Ig-Zd5"/>
                 <outlet property="ranking2ArtistLabel" destination="807-SI-Yxy" id="ZJl-vC-yJ7"/>
+                <outlet property="ranking2BackView" destination="Vnv-fW-CJf" id="m4F-88-uvz"/>
                 <outlet property="ranking2CompareImageView" destination="jAj-9s-U2S" id="tfV-YY-b2S"/>
                 <outlet property="ranking2CompareLabel" destination="bDk-pz-yDG" id="Pij-he-Zks"/>
                 <outlet property="ranking2MenuImageView" destination="Z69-0b-x0c" id="Gcp-c4-GjY"/>
@@ -31,6 +33,7 @@
                 <outlet property="ranking2PreViewLabel" destination="tyQ-la-Xna" id="ais-GS-Evy"/>
                 <outlet property="ranking2TitleLabel" destination="Chp-qJ-Lqz" id="Qxr-DI-aIe"/>
                 <outlet property="ranking3ArtistLabel" destination="QxS-ge-OqZ" id="13e-Bo-yb2"/>
+                <outlet property="ranking3BackView" destination="JE4-QC-soV" id="C8z-ii-8DV"/>
                 <outlet property="ranking3CompareImageView" destination="4x0-oQ-R9q" id="tXR-nX-XPV"/>
                 <outlet property="ranking3CompareLabel" destination="DeK-Fh-nv3" id="LBb-vB-eBa"/>
                 <outlet property="ranking3MenuImageView" destination="PUv-xo-8VZ" id="eJQ-Yq-cSM"/>
@@ -38,6 +41,7 @@
                 <outlet property="ranking3PreViewLabel" destination="SMM-OJ-Nps" id="Dhk-fv-uUn"/>
                 <outlet property="ranking3TitleLabel" destination="OA0-1g-lYc" id="9cd-KJ-pcY"/>
                 <outlet property="ranking4ArtistLabel" destination="tGy-sn-l9a" id="SPS-ct-3xp"/>
+                <outlet property="ranking4BackView" destination="P3V-xG-eLO" id="cNS-WZ-e5A"/>
                 <outlet property="ranking4CompareImageView" destination="phY-k6-Kfc" id="C0m-Q0-vKL"/>
                 <outlet property="ranking4CompareLabel" destination="dfT-yQ-Twh" id="bZu-NX-lYe"/>
                 <outlet property="ranking4MenuImageView" destination="gMT-Vk-vxY" id="ZSF-Wc-58e"/>
@@ -45,6 +49,7 @@
                 <outlet property="ranking4PreViewLabel" destination="rDc-N0-CKd" id="pXS-t0-mBw"/>
                 <outlet property="ranking4TitleLabel" destination="e89-Fl-Jio" id="UGN-8q-UPs"/>
                 <outlet property="ranking5ArtistLabel" destination="ijo-cp-jhw" id="oWf-AU-8zM"/>
+                <outlet property="ranking5BackView" destination="sYd-jg-llg" id="Xrc-hc-kwQ"/>
                 <outlet property="ranking5CompareImageView" destination="t2J-Ay-S5N" id="XTt-2J-TVy"/>
                 <outlet property="ranking5CompareLabel" destination="HKx-wV-0eI" id="Qhk-ff-9Je"/>
                 <outlet property="ranking5MenuImageView" destination="Bwo-at-Bd5" id="kEN-Iw-ztT"/>
@@ -55,21 +60,25 @@
                 <outlet property="rankingDescriptLabel" destination="a8O-86-orU" id="8iA-mg-Kd9"/>
                 <outlet property="rankingLabel" destination="YfO-SN-NFo" id="YE6-Lu-ZzV"/>
                 <outlet property="recommend1ArtistLabel" destination="DzU-ec-cRI" id="oE7-85-a8g"/>
+                <outlet property="recommend1BackView" destination="WpZ-2E-uwv" id="8DA-hr-SRv"/>
                 <outlet property="recommend1MenuImageView" destination="lmK-bW-Xw3" id="o33-bG-6WH"/>
                 <outlet property="recommend1MusicImageView" destination="5Kl-Dy-46s" id="QFg-D5-QOq"/>
                 <outlet property="recommend1PreViewLabel" destination="oKA-NS-T0V" id="kiF-3J-WUS"/>
                 <outlet property="recommend1TitleLabel" destination="g2Z-ij-nea" id="EqI-e1-U5d"/>
                 <outlet property="recommend2ArtistLabel" destination="SCY-cU-yo9" id="QQu-zI-ZkI"/>
+                <outlet property="recommend2BackView" destination="4gS-Te-ETa" id="NfI-y9-4xi"/>
                 <outlet property="recommend2MenuImageView" destination="6ME-mI-HEe" id="kbw-Gx-Om7"/>
                 <outlet property="recommend2MusicImageView" destination="mVW-kW-NNf" id="hB6-Cs-p9O"/>
                 <outlet property="recommend2PreViewLabel" destination="4oA-pc-lrg" id="UsY-Tn-GZP"/>
                 <outlet property="recommend2TitleLabel" destination="plO-jO-JIy" id="8g2-nt-6Z4"/>
                 <outlet property="recommend3ArtistLabel" destination="Jyo-7u-1mh" id="c2Y-fd-OuZ"/>
+                <outlet property="recommend3BackView" destination="d1J-aG-l65" id="6GL-TC-K5q"/>
                 <outlet property="recommend3MenuImageView" destination="SPd-xK-vr6" id="cAX-jW-giw"/>
                 <outlet property="recommend3MusicImageView" destination="zPM-6E-mia" id="AtB-kX-4HJ"/>
                 <outlet property="recommend3PreViewLabel" destination="E56-oV-H2W" id="b5h-FX-P62"/>
                 <outlet property="recommend3TitleLabel" destination="Dqv-c3-TgZ" id="qyq-k9-U3j"/>
                 <outlet property="recommend4ArtistLabel" destination="rH3-O2-8hW" id="a8D-nx-tSc"/>
+                <outlet property="recommend4BackView" destination="xFb-4Y-F56" id="kx7-er-gXk"/>
                 <outlet property="recommend4MenuImageView" destination="IZC-4i-GjX" id="D4F-MJ-OqZ"/>
                 <outlet property="recommend4MusicImageView" destination="Ct6-Rj-gKy" id="br1-4J-FXs"/>
                 <outlet property="recommend4PreViewLabel" destination="sFa-E9-cta" id="78a-MZ-C8q"/>

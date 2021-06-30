@@ -19,24 +19,28 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var recommendButton: UIButton!
   // recommend views
   /// 1
+  @IBOutlet weak var recommend1BackView: UIView!
   @IBOutlet weak var recommend1MusicImageView: UIImageView!
   @IBOutlet weak var recommend1TitleLabel: UILabel!
   @IBOutlet weak var recommend1ArtistLabel: UILabel!
   @IBOutlet weak var recommend1PreViewLabel: UILabel!
   @IBOutlet weak var recommend1MenuImageView: UIImageView!
   /// 2
+  @IBOutlet weak var recommend2BackView: UIView!
   @IBOutlet weak var recommend2MusicImageView: UIImageView!
   @IBOutlet weak var recommend2TitleLabel: UILabel!
   @IBOutlet weak var recommend2ArtistLabel: UILabel!
   @IBOutlet weak var recommend2PreViewLabel: UILabel!
   @IBOutlet weak var recommend2MenuImageView: UIImageView!
   /// 3
+  @IBOutlet weak var recommend3BackView: UIView!
   @IBOutlet weak var recommend3MusicImageView: UIImageView!
   @IBOutlet weak var recommend3TitleLabel: UILabel!
   @IBOutlet weak var recommend3ArtistLabel: UILabel!
   @IBOutlet weak var recommend3PreViewLabel: UILabel!
   @IBOutlet weak var recommend3MenuImageView: UIImageView!
   /// 4
+  @IBOutlet weak var recommend4BackView: UIView!
   @IBOutlet weak var recommend4MusicImageView: UIImageView!
   @IBOutlet weak var recommend4TitleLabel: UILabel!
   @IBOutlet weak var recommend4ArtistLabel: UILabel!
@@ -52,6 +56,7 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var rankingDescriptLabel: UILabel!
   @IBOutlet weak var rankingButton: UIButton!
   /// 1
+  @IBOutlet weak var ranking1BackView: UIView!
   @IBOutlet weak var ranking1MusicImageView: UIImageView!
   @IBOutlet weak var ranking1TitleLabel: UILabel!
   @IBOutlet weak var ranking1CompareImageView: UIImageView!
@@ -60,6 +65,7 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var ranking1PreViewLabel: UILabel!
   @IBOutlet weak var ranking1MenuImageView: UIImageView!
   /// 2
+  @IBOutlet weak var ranking2BackView: UIView!
   @IBOutlet weak var ranking2MusicImageView: UIImageView!
   @IBOutlet weak var ranking2TitleLabel: UILabel!
   @IBOutlet weak var ranking2CompareImageView: UIImageView!
@@ -68,6 +74,7 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var ranking2PreViewLabel: UILabel!
   @IBOutlet weak var ranking2MenuImageView: UIImageView!
   /// 3
+  @IBOutlet weak var ranking3BackView: UIView!
   @IBOutlet weak var ranking3MusicImageView: UIImageView!
   @IBOutlet weak var ranking3TitleLabel: UILabel!
   @IBOutlet weak var ranking3CompareImageView: UIImageView!
@@ -76,6 +83,7 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var ranking3PreViewLabel: UILabel!
   @IBOutlet weak var ranking3MenuImageView: UIImageView!
   /// 4
+  @IBOutlet weak var ranking4BackView: UIView!
   @IBOutlet weak var ranking4MusicImageView: UIImageView!
   @IBOutlet weak var ranking4TitleLabel: UILabel!
   @IBOutlet weak var ranking4CompareImageView: UIImageView!
@@ -84,6 +92,7 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var ranking4PreViewLabel: UILabel!
   @IBOutlet weak var ranking4MenuImageView: UIImageView!
   /// 5
+  @IBOutlet weak var ranking5BackView: UIView!
   @IBOutlet weak var ranking5MusicImageView: UIImageView!
   @IBOutlet weak var ranking5TitleLabel: UILabel!
   @IBOutlet weak var ranking5CompareImageView: UIImageView!
@@ -94,25 +103,134 @@ class HomeViewController: UIViewController {
   
   private let disposeBag = DisposeBag()
   
+  // tapGuesture
+  /// recommend
+  private var recommendTapGuesture1: UITapGestureRecognizer!
+  private var recommendTapGuesture2: UITapGestureRecognizer!
+  private var recommendTapGuesture3: UITapGestureRecognizer!
+  private var recommendTapGuesture4: UITapGestureRecognizer!
+  /// ranking
+  private var rankingTapGuesture1: UITapGestureRecognizer!
+  private var rankingTapGuesture2: UITapGestureRecognizer!
+  private var rankingTapGuesture3: UITapGestureRecognizer!
+  private var rankingTapGuesture4: UITapGestureRecognizer!
+  private var rankingTapGuesture5: UITapGestureRecognizer!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCollectionView()
     setupDatas()
+    setupTapItems()
   }
   
+  private func setupTapItems() {
+    // recommend
+    recommendTapGuesture1 = UITapGestureRecognizer()
+    recommendTapGuesture2 = UITapGestureRecognizer()
+    recommendTapGuesture3 = UITapGestureRecognizer()
+    recommendTapGuesture4 = UITapGestureRecognizer()
+    // ranking
+    rankingTapGuesture1 = UITapGestureRecognizer()
+    rankingTapGuesture2 = UITapGestureRecognizer()
+    rankingTapGuesture3 = UITapGestureRecognizer()
+    rankingTapGuesture4 = UITapGestureRecognizer()
+    rankingTapGuesture5 = UITapGestureRecognizer()
+    
+    // addTapGuestures
+    /// recommend
+    setupTapGesture(view: recommend1BackView,
+                    tapGuesture: recommendTapGuesture1)
+    setupTapGesture(view: recommend2BackView,
+                    tapGuesture: recommendTapGuesture2)
+    setupTapGesture(view: recommend3BackView,
+                    tapGuesture: recommendTapGuesture3)
+    setupTapGesture(view: recommend4BackView,
+                    tapGuesture: recommendTapGuesture4)
+    /// rankling
+    setupTapGesture(view: ranking1BackView,
+                    tapGuesture: rankingTapGuesture1)
+    setupTapGesture(view: ranking2BackView,
+                    tapGuesture: rankingTapGuesture2)
+    setupTapGesture(view: ranking3BackView,
+                    tapGuesture: rankingTapGuesture3)
+    setupTapGesture(view: ranking4BackView,
+                    tapGuesture: rankingTapGuesture4)
+    setupTapGesture(view: ranking5BackView,
+                    tapGuesture: rankingTapGuesture5)
+    
+    // MARK:-- ACTIONS
+    disposeBag.insert {
+      /// recommend
+      recommendTapGuesture1.rx.event
+        .subscribe(onNext: { _ in
+          print("tap recommned 1")
+          self.showMusicViewController()
+        })
+      recommendTapGuesture2.rx.event
+        .subscribe(onNext: { _ in
+          print("tap recommned 2")
+          self.showMusicViewController()
+        })
+      recommendTapGuesture3.rx.event
+        .subscribe(onNext: { _ in
+          print("tap recommned 3")
+          self.showMusicViewController()
+        })
+      recommendTapGuesture4.rx.event
+        .subscribe(onNext: { _ in
+          print("tap recommned 4")
+          self.showMusicViewController()
+        })
+      /// ranking
+      rankingTapGuesture1.rx.event
+        .subscribe(onNext: { _ in
+          print("tap ranking 1")
+          self.showMusicViewController()
+        })
+      rankingTapGuesture2.rx.event
+        .subscribe(onNext: { _ in
+          print("tap ranking 2")
+          self.showMusicViewController()
+        })
+      rankingTapGuesture3.rx.event
+        .subscribe(onNext: { _ in
+          print("tap ranking 3")
+          self.showMusicViewController()
+        })
+      rankingTapGuesture4.rx.event
+        .subscribe(onNext: { _ in
+          print("tap ranking 4")
+          self.showMusicViewController()
+        })
+      rankingTapGuesture5.rx.event
+        .subscribe(onNext: { _ in
+          print("tap ranking 5")
+          self.showMusicViewController()
+        })
+    }
+  }
+  
+  private func showMusicViewController() {
+    let vc = MusicViewController()
+    let navController = MusicNavigationController(rootViewController: vc)
+    navController.modalPresentationStyle = .fullScreen
+    self.present(navController, animated: true, completion: nil)
+  }
+  
+  // MARK: -- SAMPLE DATA
   private func setupDatas() {
     setupRecommedData()
     setupRankingData()
   }
   
-  // sample
+  // sample recommend
   private func setupRecommedData() {
     recommend1MusicImageView.image = UIImage(named: "oneokrock")
     recommend2MusicImageView.image = UIImage(named: "oneokrock")
     recommend3MusicImageView.image = UIImage(named: "oneokrock")
     recommend4MusicImageView.image = UIImage(named: "oneokrock")
   }
-  // sample
+  // sample ranking
   private func setupRankingData() {
     ranking1MusicImageView.image = UIImage(named: "oneokrock")
     ranking2MusicImageView.image = UIImage(named: "oneokrock")
@@ -231,6 +349,17 @@ extension HomeViewController {
     menuImageView.image = UIImage(named: "menu")?.withTintColor(.textColor())
   }
   
+  // ranking
+  private func setupRankingView(musicImageView: UIImageView, compareImageView: UIImageView, titleLabel: UILabel, artistLabel: UILabel, preViewLabel: UILabel, menuImageView: UIImageView) {
+    musicImageView.contentMode = .scaleAspectFill
+    musicImageView.layer.cornerRadius = 5.0
+    compareImageView.contentMode = .scaleAspectFit
+    titleLabel.textColor = .textColor()
+    artistLabel.textColor = .placeHolderColor()
+    preViewLabel.textColor = .placeHolderColor()
+    menuImageView.image = UIImage(named: "menu")?.withTintColor(.textColor())
+  }
+  
   // collectionView
   private func setupCollectionView() {
     let nib = UINib(nibName: "ArtistCollectionViewCell", bundle: .main)
@@ -247,14 +376,10 @@ extension HomeViewController {
     collectionView.collectionViewLayout = layout
   }
   
-  private func setupRankingView(musicImageView: UIImageView, compareImageView: UIImageView, titleLabel: UILabel, artistLabel: UILabel, preViewLabel: UILabel, menuImageView: UIImageView) {
-    musicImageView.contentMode = .scaleAspectFill
-    musicImageView.layer.cornerRadius = 5.0
-    compareImageView.contentMode = .scaleAspectFit
-    titleLabel.textColor = .textColor()
-    artistLabel.textColor = .placeHolderColor()
-    preViewLabel.textColor = .placeHolderColor()
-    menuImageView.image = UIImage(named: "menu")?.withTintColor(.textColor())
+  // add tapGesture
+  private func setupTapGesture(view: UIView, tapGuesture: UITapGestureRecognizer) {
+    view.isUserInteractionEnabled = true
+    view.addGestureRecognizer(tapGuesture)
   }
 }
 // MARK: -- UICollectionViewDataSource
