@@ -212,9 +212,7 @@ class HomeViewController: UIViewController {
   
   private func showMusicViewController() {
     let vc = MusicViewController()
-    let navController = MusicNavigationController(rootViewController: vc)
-    navController.modalPresentationStyle = .fullScreen
-    self.present(navController, animated: true, completion: nil)
+    self.present(vc, animated: true, completion: nil)
   }
   
   // MARK: -- SAMPLE DATA
