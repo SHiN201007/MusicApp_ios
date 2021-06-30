@@ -26,19 +26,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var viewControllers: [UIViewController] = []
     
     // Home画面
-    let home = setupTabbar(vc: HomeViewController(), title: "HOME", image: nil)
+    let home = setupTabbar(vc: HomeViewController(), title: "HOME", image: nil, tag: 0)
     viewControllers.append(home)
     
     // Search画面
-    let search = setupTabbar(vc: SearchViewController(), title: "Search", image: nil)
+    let search = setupTabbar(vc: SearchViewController(), title: "Search", image: nil, tag: 1)
     viewControllers.append(search)
     
     // Home画面
-    let favorite = setupTabbar(vc: FavoriteViewController(), title: "Favorite", image: nil)
+    let favorite = setupTabbar(vc: FavoriteViewController(), title: "Favorite", image: nil, tag: 2)
     viewControllers.append(favorite)
     
     // Home画面
-    let myPage = setupTabbar(vc: MyPageViewController(), title: "MyPage", image: nil)
+    let myPage = setupTabbar(vc: MyPageViewController(), title: "MyPage", image: nil, tag: 3)
     viewControllers.append(myPage)
     
     let tabBarController = UITabBarController()
@@ -50,13 +50,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window?.makeKeyAndVisible()
   }
   
-  private func setupTabbar(vc: UIViewController, title: String, image: UIImage?) -> UIViewController {
-    let vc = HomeViewController()
+  private func setupTabbar(vc: UIViewController, title: String, image: UIImage?, tag: Int) -> UIViewController {
     vc.title = title
     // TabBarのアイコン
     let tabBarIcon = UITabBarItem(title: title,
                                   image: image ?? nil,
-                                  tag: 0)
+                                  tag: tag)
     vc.tabBarItem = tabBarIcon
     return MusicNavigationController(rootViewController: vc)
   }
