@@ -11,7 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MusicApp_ios" customModuleProvider="target">
             <connections>
+                <outlet property="artistButton" destination="9SF-Yi-dkP" id="EP3-ir-viV"/>
+                <outlet property="artistDescriptLabel" destination="cIp-wZ-IZX" id="ham-1W-WT0"/>
+                <outlet property="artistLabel" destination="Kb6-n1-0Rk" id="aw9-bt-AFh"/>
                 <outlet property="backView" destination="5MM-CU-efk" id="n1h-da-YKC"/>
+                <outlet property="collectionView" destination="FBx-lS-Dai" id="FsQ-tV-Vnj"/>
                 <outlet property="recommend1ArtistLabel" destination="DzU-ec-cRI" id="oE7-85-a8g"/>
                 <outlet property="recommend1MenuImageView" destination="lmK-bW-Xw3" id="o33-bG-6WH"/>
                 <outlet property="recommend1MusicImageView" destination="5Kl-Dy-46s" id="QFg-D5-QOq"/>
@@ -319,13 +323,62 @@
                                         <constraint firstAttribute="height" constant="230" id="syd-h5-QFq"/>
                                     </constraints>
                                 </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nJl-VZ-zNz">
+                                    <rect key="frame" x="20" y="324" width="335" height="44"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d58-vZ-qDD">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人気アーティスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb6-n1-0Rk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="255" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SF-Yi-dkP">
+                                                    <rect key="frame" x="255" y="0.0" width="80" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="QVS-b0-n56"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="すべて表示"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人気アーティストを選んで曲を探す" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIp-wZ-IZX">
+                                            <rect key="frame" x="0.0" y="28" width="335" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FBx-lS-Dai">
+                                    <rect key="frame" x="0.0" y="378" width="375" height="120"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="Ngo-VF-bpH"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T54-Pp-G0y">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="Jim-BG-AF7" firstAttribute="top" secondItem="5MM-CU-efk" secondAttribute="top" constant="20" id="3SZ-yZ-lhA"/>
+                                <constraint firstItem="FBx-lS-Dai" firstAttribute="leading" secondItem="5MM-CU-efk" secondAttribute="leading" id="4oE-Kb-K5r"/>
                                 <constraint firstAttribute="height" constant="1000" id="5IQ-V4-tzS"/>
+                                <constraint firstItem="nJl-VZ-zNz" firstAttribute="leading" secondItem="5MM-CU-efk" secondAttribute="leading" constant="20" id="BFa-7Y-yOQ"/>
                                 <constraint firstItem="Jim-BG-AF7" firstAttribute="leading" secondItem="5MM-CU-efk" secondAttribute="leading" constant="20" id="Dnx-hQ-5uY"/>
                                 <constraint firstAttribute="trailing" secondItem="Wr1-HO-CXh" secondAttribute="trailing" constant="20" id="F4n-bd-5IS"/>
+                                <constraint firstAttribute="trailing" secondItem="nJl-VZ-zNz" secondAttribute="trailing" constant="20" id="Fpp-sA-ljV"/>
+                                <constraint firstAttribute="trailing" secondItem="FBx-lS-Dai" secondAttribute="trailing" id="SRi-Pw-4dw"/>
+                                <constraint firstItem="nJl-VZ-zNz" firstAttribute="top" secondItem="Wr1-HO-CXh" secondAttribute="bottom" constant="20" id="YnK-Wg-VyG"/>
+                                <constraint firstItem="FBx-lS-Dai" firstAttribute="top" secondItem="nJl-VZ-zNz" secondAttribute="bottom" constant="10" id="dtO-rI-eZI"/>
                                 <constraint firstItem="Wr1-HO-CXh" firstAttribute="top" secondItem="Jim-BG-AF7" secondAttribute="bottom" constant="10" id="p7J-qI-Dde"/>
                                 <constraint firstItem="Wr1-HO-CXh" firstAttribute="leading" secondItem="5MM-CU-efk" secondAttribute="leading" constant="20" id="pVH-vC-ZKf"/>
                                 <constraint firstAttribute="trailing" secondItem="Jim-BG-AF7" secondAttribute="trailing" constant="20" id="uwy-I7-PzB"/>

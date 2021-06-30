@@ -23,6 +23,8 @@
 		06BB4F072689A6FC002B8576 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4F052689A6FC002B8576 /* MyPageViewController.swift */; };
 		06BB4F082689A6FC002B8576 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4F062689A6FC002B8576 /* MyPageViewController.xib */; };
 		06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4F0A2689AA49002B8576 /* UIColorExtension.swift */; };
+		06BB4F1D268C1296002B8576 /* ArtistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4F1B268C1296002B8576 /* ArtistCollectionViewCell.swift */; };
+		06BB4F1E268C1296002B8576 /* ArtistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4F1C268C1296002B8576 /* ArtistCollectionViewCell.xib */; };
 		096BABDC86962888E0987FA8 /* Pods_MusicApp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3C2ED490553BAFC59D9BD9 /* Pods_MusicApp_ios.framework */; };
 		3273E7CFE183C726FCEB985D /* libPods-MusicApp_iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8375A61FD8DF1E419B09A2 /* libPods-MusicApp_iosUITests.a */; };
 		5EE38069A54068CC75CB85BE /* libPods-MusicApp_iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B180DABDA4C5D91D17B85093 /* libPods-MusicApp_iosTests.a */; };
@@ -68,6 +70,8 @@
 		06BB4F052689A6FC002B8576 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		06BB4F062689A6FC002B8576 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		06BB4F0A2689AA49002B8576 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		06BB4F1B268C1296002B8576 /* ArtistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCollectionViewCell.swift; sourceTree = "<group>"; };
+		06BB4F1C268C1296002B8576 /* ArtistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCollectionViewCell.xib; sourceTree = "<group>"; };
 		2DDC62A9167A07F59DAD5BD2 /* Pods-MusicApp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosTests/Pods-MusicApp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BA3F46B636B9DA8824E03B /* Pods-MusicApp_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosUITests/Pods-MusicApp_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		796FD70C89CD08017751DBEC /* Pods-MusicApp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_ios.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_ios/Pods-MusicApp_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			children = (
 				06BB4EF3268999D1002B8576 /* HomeViewController.swift */,
 				06BB4EF4268999D1002B8576 /* HomeViewController.xib */,
+				06BB4F1F268C129A002B8576 /* CollectionViewCell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -215,6 +220,15 @@
 				06BB4F0A2689AA49002B8576 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		06BB4F1F268C129A002B8576 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				06BB4F1B268C1296002B8576 /* ArtistCollectionViewCell.swift */,
+				06BB4F1C268C1296002B8576 /* ArtistCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		236EFC313C7F65A221A45F2F /* Frameworks */ = {
@@ -348,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06BB4F1E268C1296002B8576 /* ArtistCollectionViewCell.xib in Resources */,
 				06BB4ED026899853002B8576 /* LaunchScreen.storyboard in Resources */,
 				06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */,
 				06BB4EFE2689A6D2002B8576 /* SearchViewController.xib in Resources */,
@@ -486,6 +501,7 @@
 				06BB4F072689A6FC002B8576 /* MyPageViewController.swift in Sources */,
 				06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */,
 				06BB4EC626899852002B8576 /* SceneDelegate.swift in Sources */,
+				06BB4F1D268C1296002B8576 /* ArtistCollectionViewCell.swift in Sources */,
 				06BB4EF5268999D1002B8576 /* HomeViewController.swift in Sources */,
 				06BB4F022689A6E8002B8576 /* FavoriteViewController.swift in Sources */,
 				06BB4EFA26899A24002B8576 /* MusicNavigationController.swift in Sources */,
