@@ -47,14 +47,62 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var artistDescriptLabel: UILabel!
   @IBOutlet weak var artistButton: UIButton!
   @IBOutlet weak var collectionView: UICollectionView!
-  
+  // ranking
+  @IBOutlet weak var rankingLabel: UILabel!
+  @IBOutlet weak var rankingDescriptLabel: UILabel!
+  @IBOutlet weak var rankingButton: UIButton!
+  /// 1
+  @IBOutlet weak var ranking1MusicImageView: UIImageView!
+  @IBOutlet weak var ranking1TitleLabel: UILabel!
+  @IBOutlet weak var ranking1CompareImageView: UIImageView!
+  @IBOutlet weak var ranking1CompareLabel: UILabel!
+  @IBOutlet weak var ranking1ArtistLabel: UILabel!
+  @IBOutlet weak var ranking1PreViewLabel: UILabel!
+  @IBOutlet weak var ranking1MenuImageView: UIImageView!
+  /// 2
+  @IBOutlet weak var ranking2MusicImageView: UIImageView!
+  @IBOutlet weak var ranking2TitleLabel: UILabel!
+  @IBOutlet weak var ranking2CompareImageView: UIImageView!
+  @IBOutlet weak var ranking2CompareLabel: UILabel!
+  @IBOutlet weak var ranking2ArtistLabel: UILabel!
+  @IBOutlet weak var ranking2PreViewLabel: UILabel!
+  @IBOutlet weak var ranking2MenuImageView: UIImageView!
+  /// 3
+  @IBOutlet weak var ranking3MusicImageView: UIImageView!
+  @IBOutlet weak var ranking3TitleLabel: UILabel!
+  @IBOutlet weak var ranking3CompareImageView: UIImageView!
+  @IBOutlet weak var ranking3CompareLabel: UILabel!
+  @IBOutlet weak var ranking3ArtistLabel: UILabel!
+  @IBOutlet weak var ranking3PreViewLabel: UILabel!
+  @IBOutlet weak var ranking3MenuImageView: UIImageView!
+  /// 4
+  @IBOutlet weak var ranking4MusicImageView: UIImageView!
+  @IBOutlet weak var ranking4TitleLabel: UILabel!
+  @IBOutlet weak var ranking4CompareImageView: UIImageView!
+  @IBOutlet weak var ranking4CompareLabel: UILabel!
+  @IBOutlet weak var ranking4ArtistLabel: UILabel!
+  @IBOutlet weak var ranking4PreViewLabel: UILabel!
+  @IBOutlet weak var ranking4MenuImageView: UIImageView!
+  /// 5
+  @IBOutlet weak var ranking5MusicImageView: UIImageView!
+  @IBOutlet weak var ranking5TitleLabel: UILabel!
+  @IBOutlet weak var ranking5CompareImageView: UIImageView!
+  @IBOutlet weak var ranking5CompareLabel: UILabel!
+  @IBOutlet weak var ranking5ArtistLabel: UILabel!
+  @IBOutlet weak var ranking5PreViewLabel: UILabel!
+  @IBOutlet weak var ranking5MenuImageView: UIImageView!
   
   private let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCollectionView()
+    setupDatas()
+  }
+  
+  private func setupDatas() {
     setupRecommedData()
+    setupRankingData()
   }
   
   // sample
@@ -63,6 +111,23 @@ class HomeViewController: UIViewController {
     recommend2MusicImageView.image = UIImage(named: "oneokrock")
     recommend3MusicImageView.image = UIImage(named: "oneokrock")
     recommend4MusicImageView.image = UIImage(named: "oneokrock")
+  }
+  // sample
+  private func setupRankingData() {
+    ranking1MusicImageView.image = UIImage(named: "oneokrock")
+    ranking2MusicImageView.image = UIImage(named: "oneokrock")
+    ranking3MusicImageView.image = UIImage(named: "oneokrock")
+    ranking4MusicImageView.image = UIImage(named: "oneokrock")
+    ranking5MusicImageView.image = UIImage(named: "oneokrock")
+    // compare
+    let current = UIImage(named: "compare_current")
+    let up = UIImage(named: "compare_up")
+    let down = UIImage(named: "compare_down")
+    ranking1CompareImageView.image = current
+    ranking2CompareImageView.image = up
+    ranking3CompareImageView.image = down
+    ranking4CompareImageView.image = current
+    ranking5CompareImageView.image = up
   }
 
 }
@@ -76,7 +141,7 @@ extension HomeViewController {
     // view
     self.view.backgroundColor = .backgroundColor()
     backView.backgroundColor = .backgroundColor()
-    // recommend
+    // Recommend
     setupTitleLayout(titleLabel: recommendLabel, descriptLabel: recommendDescriptLabel, button: recommendButton)
     /// 1
     setupRecommendView(musicImageView: recommend1MusicImageView,
@@ -105,8 +170,46 @@ extension HomeViewController {
     // Artist
     setupTitleLayout(titleLabel: artistLabel, descriptLabel: artistDescriptLabel, button: artistButton)
     collectionView.backgroundColor = .backgroundColor()
+    // Ranking
+    setupTitleLayout(titleLabel: rankingLabel, descriptLabel: rankingDescriptLabel, button: rankingButton)
+    /// 1
+    setupRankingView(musicImageView: ranking1MusicImageView,
+                     compareImageView: ranking1CompareImageView,
+                     titleLabel: ranking1TitleLabel,
+                     artistLabel: ranking1ArtistLabel,
+                     preViewLabel: ranking1PreViewLabel,
+                     menuImageView: ranking1MenuImageView)
+    /// 2
+    setupRankingView(musicImageView: ranking2MusicImageView,
+                     compareImageView: ranking2CompareImageView,
+                     titleLabel: ranking2TitleLabel,
+                     artistLabel: ranking2ArtistLabel,
+                     preViewLabel: ranking2PreViewLabel,
+                     menuImageView: ranking2MenuImageView)
+    /// 3
+    setupRankingView(musicImageView: ranking3MusicImageView,
+                     compareImageView: ranking3CompareImageView,
+                     titleLabel: ranking3TitleLabel,
+                     artistLabel: ranking3ArtistLabel,
+                     preViewLabel: ranking3PreViewLabel,
+                     menuImageView: ranking3MenuImageView)
+    /// 4
+    setupRankingView(musicImageView: ranking4MusicImageView,
+                     compareImageView: ranking4CompareImageView,
+                     titleLabel: ranking4TitleLabel,
+                     artistLabel: ranking4ArtistLabel,
+                     preViewLabel: ranking4PreViewLabel,
+                     menuImageView: ranking4MenuImageView)
+    /// 5
+    setupRankingView(musicImageView: ranking5MusicImageView,
+                     compareImageView: ranking5CompareImageView,
+                     titleLabel: ranking5TitleLabel,
+                     artistLabel: ranking5ArtistLabel,
+                     preViewLabel: ranking5PreViewLabel,
+                     menuImageView: ranking5MenuImageView)
   }
   
+  // title
   private func setupTitleLayout(titleLabel: UILabel, descriptLabel: UILabel, button: UIButton) {
     /// title
     titleLabel.textColor = .mainColor()
@@ -118,6 +221,7 @@ extension HomeViewController {
     button.setTitleColor(.textColor(), for: .normal)
   }
   
+  // recommend
   private func setupRecommendView(musicImageView: UIImageView, titleLabel: UILabel, artistLabel: UILabel, preViewLabel: UILabel, menuImageView: UIImageView) {
     musicImageView.contentMode = .scaleAspectFill
     musicImageView.layer.cornerRadius = 5.0
@@ -127,6 +231,7 @@ extension HomeViewController {
     menuImageView.image = UIImage(named: "menu")?.withTintColor(.textColor())
   }
   
+  // collectionView
   private func setupCollectionView() {
     let nib = UINib(nibName: "ArtistCollectionViewCell", bundle: .main)
     collectionView.register(nib, forCellWithReuseIdentifier: "ArtistCell")
@@ -140,6 +245,16 @@ extension HomeViewController {
     layout.scrollDirection = .horizontal
     layout.itemSize = CGSize(width: 120, height: 120)
     collectionView.collectionViewLayout = layout
+  }
+  
+  private func setupRankingView(musicImageView: UIImageView, compareImageView: UIImageView, titleLabel: UILabel, artistLabel: UILabel, preViewLabel: UILabel, menuImageView: UIImageView) {
+    musicImageView.contentMode = .scaleAspectFill
+    musicImageView.layer.cornerRadius = 5.0
+    compareImageView.contentMode = .scaleAspectFit
+    titleLabel.textColor = .textColor()
+    artistLabel.textColor = .placeHolderColor()
+    preViewLabel.textColor = .placeHolderColor()
+    menuImageView.image = UIImage(named: "menu")?.withTintColor(.textColor())
   }
 }
 // MARK: -- UICollectionViewDataSource
