@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
   
   @IBOutlet weak var backView: UIView!
   // recommend
