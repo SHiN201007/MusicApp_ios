@@ -29,12 +29,16 @@ extension UIColor {
     return UIColor(code: "#3E3F68")
   }
   
+  class func textColor() -> UIColor {
+    return UIColor(code: "#222455")
+  }
+  
   class func backgroundColor() -> UIColor {
     return UIColor(code: "#F5F5F5")
   }
   
-  class func textColor() -> UIColor {
-    return UIColor(code: "#222455")
+  class func navyColor() -> UIColor {
+    return UIColor(code: "#5663FF")
   }
 
   class func placeHolderColor() -> UIColor {

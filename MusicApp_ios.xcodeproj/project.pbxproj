@@ -14,6 +14,11 @@
 		0672BF3C26956CFE00DAA4C9 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0672BF3A26956CFE00DAA4C9 /* RegisterViewController.xib */; };
 		0672BF4026956D3000DAA4C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0672BF3E26956D3000DAA4C9 /* LoginViewController.swift */; };
 		0672BF4126956D3000DAA4C9 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0672BF3F26956D3000DAA4C9 /* LoginViewController.xib */; };
+		0672BF442695720E00DAA4C9 /* AuthObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0672BF432695720E00DAA4C9 /* AuthObject.swift */; };
+		0672BF472695726400DAA4C9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0672BF462695726400DAA4C9 /* RegisterViewModel.swift */; };
+		0672BF492695726D00DAA4C9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0672BF482695726D00DAA4C9 /* LoginViewModel.swift */; };
+		0672BF4B269574FF00DAA4C9 /* AccountSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0672BF4A269574FF00DAA4C9 /* AccountSettingModel.swift */; };
+		0672BF4E2695792900DAA4C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0672BF4D2695792900DAA4C9 /* GoogleService-Info.plist */; };
 		06BB4EC426899852002B8576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EC326899852002B8576 /* AppDelegate.swift */; };
 		06BB4EC626899852002B8576 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EC526899852002B8576 /* SceneDelegate.swift */; };
 		06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4ECC26899853002B8576 /* Assets.xcassets */; };
@@ -65,6 +70,11 @@
 		0672BF3A26956CFE00DAA4C9 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		0672BF3E26956D3000DAA4C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0672BF3F26956D3000DAA4C9 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		0672BF432695720E00DAA4C9 /* AuthObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthObject.swift; sourceTree = "<group>"; };
+		0672BF462695726400DAA4C9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		0672BF482695726D00DAA4C9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0672BF4A269574FF00DAA4C9 /* AccountSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingModel.swift; sourceTree = "<group>"; };
+		0672BF4D2695792900DAA4C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06BB4EC026899852002B8576 /* MusicApp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06BB4EC326899852002B8576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06BB4EC526899852002B8576 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +155,7 @@
 			children = (
 				0672BF3926956CFE00DAA4C9 /* RegisterViewController.swift */,
 				0672BF3A26956CFE00DAA4C9 /* RegisterViewController.xib */,
+				0672BF462695726400DAA4C9 /* RegisterViewModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -154,8 +165,25 @@
 			children = (
 				0672BF3E26956D3000DAA4C9 /* LoginViewController.swift */,
 				0672BF3F26956D3000DAA4C9 /* LoginViewController.xib */,
+				0672BF482695726D00DAA4C9 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		0672BF452695721300DAA4C9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				0672BF432695720E00DAA4C9 /* AuthObject.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		0672BF4C2695750700DAA4C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0672BF4A269574FF00DAA4C9 /* AccountSettingModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		06BB4EB726899852002B8576 = {
@@ -186,11 +214,14 @@
 				06BB4EC326899852002B8576 /* AppDelegate.swift */,
 				06BB4EC526899852002B8576 /* SceneDelegate.swift */,
 				06BB4EF926899A24002B8576 /* MusicNavigationController.swift */,
+				0672BF452695721300DAA4C9 /* Objects */,
+				0672BF4C2695750700DAA4C9 /* Model */,
 				06BB4F0C2689AA4C002B8576 /* Extensions */,
 				06BB4EF7268999D5002B8576 /* Views */,
 				06BB4ECC26899853002B8576 /* Assets.xcassets */,
 				06BB4ECE26899853002B8576 /* LaunchScreen.storyboard */,
 				06BB4ED126899853002B8576 /* Info.plist */,
+				0672BF4D2695792900DAA4C9 /* GoogleService-Info.plist */,
 			);
 			path = MusicApp_ios;
 			sourceTree = "<group>";
@@ -429,6 +460,7 @@
 				0672BF4126956D3000DAA4C9 /* LoginViewController.xib in Resources */,
 				06BB4F1E268C1296002B8576 /* ArtistCollectionViewCell.xib in Resources */,
 				0672BF372695688900DAA4C9 /* StartViewController.xib in Resources */,
+				0672BF4E2695792900DAA4C9 /* GoogleService-Info.plist in Resources */,
 				06BB4ED026899853002B8576 /* LaunchScreen.storyboard in Resources */,
 				06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */,
 				06BB4EFE2689A6D2002B8576 /* SearchViewController.xib in Resources */,
@@ -566,10 +598,14 @@
 				06BB4EC426899852002B8576 /* AppDelegate.swift in Sources */,
 				06BB4F072689A6FC002B8576 /* MyPageViewController.swift in Sources */,
 				0672BF4026956D3000DAA4C9 /* LoginViewController.swift in Sources */,
+				0672BF442695720E00DAA4C9 /* AuthObject.swift in Sources */,
 				06BB4F23268C34F1002B8576 /* HomeViewModel.swift in Sources */,
+				0672BF4B269574FF00DAA4C9 /* AccountSettingModel.swift in Sources */,
 				06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */,
 				0672BF332695683E00DAA4C9 /* BaseViewController.swift in Sources */,
+				0672BF492695726D00DAA4C9 /* LoginViewModel.swift in Sources */,
 				06BB4F26268C3C13002B8576 /* MusicViewController.swift in Sources */,
+				0672BF472695726400DAA4C9 /* RegisterViewModel.swift in Sources */,
 				06BB4EC626899852002B8576 /* SceneDelegate.swift in Sources */,
 				0672BF362695688900DAA4C9 /* StartViewController.swift in Sources */,
 				0672BF3B26956CFE00DAA4C9 /* RegisterViewController.swift in Sources */,

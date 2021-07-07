@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RegisterViewController: UIViewController {
   
@@ -22,9 +24,50 @@ class RegisterViewController: UIViewController {
   // done
   @IBOutlet weak var doneButton: UIButton!
   
+  private var viewModel: RegiserViewModel?
+  private let disposeBag = DisposeBag()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    setupViewModel()
+  }
+  
+  private func setupViewModel() {
+    viewModel = RegiserViewModel()
+    let input = RegisterViewModelInput(doneButton: doneButton.rx.tap.asObservable())
+    viewModel?.setupActions(input)
+    
+    // inputs
+    disposeBag.insert {
+      // email
+      emailTextField.rx.text.orEmpty
+        .subscribe(onNext: { text in
+          self.viewModel?.updateEmailText(text)
+        })
+      
+      // password
+      passwordTextField.rx.text.orEmpty
+        .subscribe(onNext: { text in
+          self.viewModel?.updatePasswordText(text)
+        })
+    }
+    
+    // outputs
+    viewModel?.outputs?.showViewObservable
+      .subscribe(onNext: { flag in
+        if flag {
+          self.showViewController(vc: LoginViewController(), title: "認証")
+        }
+      })
+      .disposed(by: disposeBag)
+  }
+  
+  // show ViewController
+  private func showViewController(vc: UIViewController, title: String?) {
+    if let _title = title {
+      vc.title = _title
+    }
+    self.navigationController?.pushViewController(vc, animated: true)
   }
 
 }
