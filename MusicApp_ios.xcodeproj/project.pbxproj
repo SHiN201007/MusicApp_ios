@@ -24,6 +24,7 @@
 		06A105EA269E7FD100B27A0C /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105E8269E7FD100B27A0C /* GenreViewController.swift */; };
 		06A105EB269E7FD100B27A0C /* GenreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A105E9269E7FD100B27A0C /* GenreViewController.xib */; };
 		06A105EE269E803D00B27A0C /* AccountSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105ED269E803D00B27A0C /* AccountSettingViewModel.swift */; };
+		06A105F0269E879600B27A0C /* GenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105EF269E879600B27A0C /* GenreViewModel.swift */; };
 		06BB4EC426899852002B8576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EC326899852002B8576 /* AppDelegate.swift */; };
 		06BB4EC626899852002B8576 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EC526899852002B8576 /* SceneDelegate.swift */; };
 		06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4ECC26899853002B8576 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		06A105E8269E7FD100B27A0C /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
 		06A105E9269E7FD100B27A0C /* GenreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreViewController.xib; sourceTree = "<group>"; };
 		06A105ED269E803D00B27A0C /* AccountSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewModel.swift; sourceTree = "<group>"; };
+		06A105EF269E879600B27A0C /* GenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewModel.swift; sourceTree = "<group>"; };
 		06BB4EC026899852002B8576 /* MusicApp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06BB4EC326899852002B8576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06BB4EC526899852002B8576 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				06A105E8269E7FD100B27A0C /* GenreViewController.swift */,
 				06A105E9269E7FD100B27A0C /* GenreViewController.xib */,
+				06A105EF269E879600B27A0C /* GenreViewModel.swift */,
 			);
 			path = Genre;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				06BB4EF5268999D1002B8576 /* HomeViewController.swift in Sources */,
 				06BB4F022689A6E8002B8576 /* FavoriteViewController.swift in Sources */,
 				06BB4EFA26899A24002B8576 /* MusicNavigationController.swift in Sources */,
+				06A105F0269E879600B27A0C /* GenreViewModel.swift in Sources */,
 				06A105E5269E70AE00B27A0C /* AccountSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
