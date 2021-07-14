@@ -41,10 +41,8 @@ class AccountSettingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
-    setupViewModel()
-    
-    
     setupImageView()
+    setupViewModel()
   }
   
   private func configure() {
@@ -73,15 +71,6 @@ class AccountSettingViewController: UIViewController {
         .subscribe(onNext: { _ in
           self.setImagePicker()
         })
-      /// tap checkbox
-      checkboxTapGesture.rx.event
-        .subscribe({ _ in
-          if self.isCheckmark {
-            self.setupCheckboxOff()
-          }else {
-            self.setupCheckboxOn()
-          }
-        })
     }
   }
   
@@ -102,6 +91,42 @@ class AccountSettingViewController: UIViewController {
     let input = AccountSettingViewModelInput(doneButton: doneButton.rx.tap.asObservable())
     viewModel?.setupActions(input: input)
     
+    // inputs
+    /// user name
+    userNameTextField.rx.text.orEmpty
+      .subscribe(onNext: { text in
+        self.viewModel?.updateUserName(text)
+      })
+      .disposed(by: disposeBag)
+    
+    /// gender
+    manButton.rx.tap
+      .subscribe(onNext: {
+        self.viewModel?.updateGender(0)
+        self.genderLayoutSetup(isGender: 0)
+      })
+      .disposed(by: disposeBag)
+    
+    womanButton.rx.tap
+      .subscribe(onNext: {
+        self.viewModel?.updateGender(1)
+        self.genderLayoutSetup(isGender: 1)
+      })
+      .disposed(by: disposeBag)
+    
+    /// tap checkbox
+    checkboxTapGesture.rx.event
+      .subscribe(onNext: { _ in
+        if self.isCheckmark {
+          self.setupCheckboxOff()
+          self.viewModel?.updateCheckbox(false)
+        }else {
+          self.setupCheckboxOn()
+          self.viewModel?.updateCheckbox(true)
+        }
+      })
+      .disposed(by: disposeBag)
+    
     
     // outputs
     viewModel?.outputs?.showViewObservable
@@ -111,6 +136,16 @@ class AccountSettingViewController: UIViewController {
         }
       })
       .disposed(by: disposeBag)
+  }
+  
+  private func genderLayoutSetup(isGender: Int) {
+    if isGender == 0 {
+      setupButton(button: manButton)
+      setupButtonOff(button: womanButton)
+    }else if isGender == 1 {
+      setupButtonOff(button: manButton)
+      setupButton(button: womanButton)
+    }
   }
   
   private func showViewController(vc: UIViewController, title: String) {
@@ -196,18 +231,14 @@ extension AccountSettingViewController {
 }
 extension AccountSettingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//    if let image = info[.originalImage] as! UIImage? {
-//      guard let data = (image.jpegData(compressionQuality: 0.05)) else { return }
-//      let model = UserSettingModel()
-//      KRProgressHUD.show(withMessage: "uploading...", completion: nil)
-//      model.uploadImage(imageData: data, completion: {
-//        KRProgressHUD.showSuccess(withMessage: "アップロード完了")
-//      })
-//      userIconImageView.image = image
-//    }else {
-//      print("error")
-//      KRProgressHUD.showError(withMessage: "アップロード失敗")
-//    }
+    if let image = info[.originalImage] as! UIImage? {
+      guard let data = (image.jpegData(compressionQuality: 0.05)) else { return }
+      self.userIconImageView.image = image
+      self.viewModel?.updateImage(data)
+    }else {
+      print("error")
+      KRProgressHUD.showError(withMessage: "取得失敗")
+    }
     self.dismiss(animated: true, completion: nil)
   }
   

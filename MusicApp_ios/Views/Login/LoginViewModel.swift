@@ -59,9 +59,39 @@ class LoginViewModel: LoginViewModelType {
   func setupActions(_ input: LoginViewModelInput) {
     input.doneButton
       .subscribe(onNext: {
-        self.updateIsShowView(true)
+        if let _email = self.email,
+           let _password = self.password {
+          KRProgressHUD.show()
+          // isEmpty
+          if _email.isEmpty || _password.isEmpty {
+            KRProgressHUD.showError(withMessage: "未入力項目があります。")
+          }else {
+            // reigser
+            self.setupAuth(email: _email, password: _password, { error in
+              KRProgressHUD.showError(withMessage: error)
+            }, {
+              // done
+              KRProgressHUD.dismiss()
+              self.updateIsShowView(true)
+            })
+          }
+        }else {
+          // error
+          KRProgressHUD.showError(withMessage: "未入力項目があります。")
+        }
       })
       .disposed(by: disposeBag)
+  }
+  
+  private func setupAuth(email: String, password: String,
+                         _ failure: @escaping (String) -> Void,
+                         _ completion: @escaping () -> Void) {
+    // auth
+    self.model?.signIn(email: email, password: password, failure: { error in
+      failure(error)
+    }, success: {
+      completion()
+    })
   }
   
   // MARK: INPUT

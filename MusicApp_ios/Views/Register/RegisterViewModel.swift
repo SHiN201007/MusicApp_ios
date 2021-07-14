@@ -59,27 +59,26 @@ class RegiserViewModel: RegisterViewModelType {
     // doneButton
     input.doneButton
       .subscribe(onNext: {
-//        if let _email = self.email,
-//           let _password = self.password {
-//          KRProgressHUD.show()
-//          // isEmpty
-//          if _email.isEmpty || _password.isEmpty {
-//            KRProgressHUD.showError(withMessage: "未入力項目があります。")
-//          }else {
-//            // reigser
-//            self.setupRegister(email: _email, password: _password, { error in
-//              KRProgressHUD.showError(withMessage: error)
-//            }, {
-//              // done
-//              KRProgressHUD.dismiss()
-//              self.updateIsShowView(true)
-//            })
-//          }
-//        }else {
-//          // error
-//          KRProgressHUD.showError(withMessage: "未入力項目があります。")
-//        }
-        self.updateIsShowView(true)
+        if let _email = self.email,
+           let _password = self.password {
+          KRProgressHUD.show()
+          // isEmpty
+          if _email.isEmpty || _password.isEmpty {
+            KRProgressHUD.showError(withMessage: "未入力項目があります。")
+          }else {
+            // reigser
+            self.setupRegister(email: _email, password: _password, { error in
+              KRProgressHUD.showError(withMessage: error)
+            }, {
+              // done
+              KRProgressHUD.dismiss()
+              self.updateIsShowView(true)
+            })
+          }
+        }else {
+          // error
+          KRProgressHUD.showError(withMessage: "未入力項目があります。")
+        }
       })
       .disposed(by: disposeBag)
   }
