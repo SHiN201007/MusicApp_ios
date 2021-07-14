@@ -60,6 +60,7 @@ extension StartViewController {
   
   private func layoutConfigure() {
     self.view.backgroundColor = .backgroundColor()
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     // title
     titleLabel.textColor = .textColor()
     titleLabel.font = .boldSystemFont(ofSize: 42)

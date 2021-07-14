@@ -43,7 +43,7 @@
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYF-w4-tn8">
                                     <rect key="frame" x="60" y="0.0" width="235" height="58"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -69,7 +69,7 @@
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gyh-1m-sIg">
                                     <rect key="frame" x="60" y="0.0" width="235" height="58"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemGray6Color"/>

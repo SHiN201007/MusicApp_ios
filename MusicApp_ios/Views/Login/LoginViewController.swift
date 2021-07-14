@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
 
@@ -21,10 +23,76 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var passwordTextField: UITextField!
   // done
   @IBOutlet weak var doneButton: UIButton!
+  
+  private var viewModel: LoginViewModel?
+  private let disposeBag = DisposeBag()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    initTextData()
+    setupViewModel()
+  }
+  
+  private func initTextData() {
+    let object = AuthObject.shared
+    if let email = object.email,
+       let password = object.password {
+      print(email)
+      print(password)
+      self.emailTextField.text = email
+      self.passwordTextField.text = password
+    }
+  }
+  
+  private func setupViewModel() {
+    viewModel = LoginViewModel()
+    let input = LoginViewModelInput(doneButton: doneButton.rx.tap.asObservable())
+    viewModel?.setupActions(input)
+    
+    // inputs
+    disposeBag.insert {
+      // email
+      emailTextField.rx.text.orEmpty
+        .subscribe(onNext: { text in
+          self.viewModel?.updateEmailText(text)
+        })
+      
+      // password
+      passwordTextField.rx.text.orEmpty
+        .subscribe(onNext: { text in
+          self.viewModel?.updatePasswordText(text)
+        })
+    }
+    
+    // outputs
+    /// email
+    viewModel?.outputs?.emailObservable
+      .subscribe(onNext: { text in
+        self.emailTextField.text = text
+      })
+      .disposed(by: disposeBag)
+    /// password
+    viewModel?.outputs?.passwordObservable
+      .subscribe(onNext: { text in
+        self.passwordTextField.text = text
+      })
+      .disposed(by: disposeBag)
+    
+    viewModel?.outputs?.showViewObservable
+      .subscribe(onNext: { flag in
+        if flag {
+          self.showViewController(vc: AccountSettingViewController(), title: "アカウント設定")
+        }
+      })
+      .disposed(by: disposeBag)
+  }
+  
+  // show ViewController
+  private func showViewController(vc: UIViewController, title: String?) {
+    if let _title = title {
+      vc.title = _title
+    }
+    self.navigationController?.pushViewController(vc, animated: true)
   }
 
 }
@@ -37,6 +105,7 @@ extension LoginViewController {
   
   private func layoutConfigure() {
     self.view.backgroundColor = .backgroundColor()
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     // title
     titleLabel.textColor = .textColor()
     titleLabel.font = .boldSystemFont(ofSize: 42)
@@ -45,6 +114,7 @@ extension LoginViewController {
     emailImageView.image = UIImage(named: "mail")?.withTintColor(.mainColor())
     // password
     setupBox(view: passwordView, textField: passwordTextField)
+    passwordTextField.isSecureTextEntry = true
     passwordImageView.image = UIImage(named: "password")?.withTintColor(.mainColor())
     // done
     doneButton.backgroundColor = .mainColor()
