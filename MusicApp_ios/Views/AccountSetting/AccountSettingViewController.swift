@@ -35,11 +35,15 @@ class AccountSettingViewController: UIViewController {
   
   private var isCheckmark: Bool = false
   
+  private var viewModel: AccountSettingViewModel?
   private let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
+    setupViewModel()
+    
+    
     setupImageView()
   }
   
@@ -52,7 +56,6 @@ class AccountSettingViewController: UIViewController {
     // checkbox
     setupCheckboxOff()
   }
-  
   
   private func setupImageView() {
     // icon
@@ -90,6 +93,29 @@ class AccountSettingViewController: UIViewController {
     self.present(imagePickerController,animated: true,completion: {
       KRProgressHUD.dismiss()
     })
+  }
+  
+  
+  // MARK: -- ViewModel
+  private func setupViewModel() {
+    viewModel = AccountSettingViewModel()
+    let input = AccountSettingViewModelInput(doneButton: doneButton.rx.tap.asObservable())
+    viewModel?.setupActions(input: input)
+    
+    
+    // outputs
+    viewModel?.outputs?.showViewObservable
+      .subscribe(onNext: { value in
+        if value {
+          self.showViewController(vc: GenreViewController(), title: "このジャンルは好みですか？")
+        }
+      })
+      .disposed(by: disposeBag)
+  }
+  
+  private func showViewController(vc: UIViewController, title: String) {
+    vc.title = title
+    self.navigationController?.pushViewController(vc, animated: true)
   }
 
 }

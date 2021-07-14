@@ -21,6 +21,9 @@
 		0672BF4E2695792900DAA4C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0672BF4D2695792900DAA4C9 /* GoogleService-Info.plist */; };
 		06A105E5269E70AE00B27A0C /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105E3269E70AE00B27A0C /* AccountSettingViewController.swift */; };
 		06A105E6269E70AE00B27A0C /* AccountSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A105E4269E70AE00B27A0C /* AccountSettingViewController.xib */; };
+		06A105EA269E7FD100B27A0C /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105E8269E7FD100B27A0C /* GenreViewController.swift */; };
+		06A105EB269E7FD100B27A0C /* GenreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A105E9269E7FD100B27A0C /* GenreViewController.xib */; };
+		06A105EE269E803D00B27A0C /* AccountSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105ED269E803D00B27A0C /* AccountSettingViewModel.swift */; };
 		06BB4EC426899852002B8576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EC326899852002B8576 /* AppDelegate.swift */; };
 		06BB4EC626899852002B8576 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4EC526899852002B8576 /* SceneDelegate.swift */; };
 		06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4ECC26899853002B8576 /* Assets.xcassets */; };
@@ -79,6 +82,9 @@
 		0672BF4D2695792900DAA4C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06A105E3269E70AE00B27A0C /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		06A105E4269E70AE00B27A0C /* AccountSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingViewController.xib; sourceTree = "<group>"; };
+		06A105E8269E7FD100B27A0C /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
+		06A105E9269E7FD100B27A0C /* GenreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreViewController.xib; sourceTree = "<group>"; };
+		06A105ED269E803D00B27A0C /* AccountSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewModel.swift; sourceTree = "<group>"; };
 		06BB4EC026899852002B8576 /* MusicApp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06BB4EC326899852002B8576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06BB4EC526899852002B8576 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,8 +201,18 @@
 			children = (
 				06A105E3269E70AE00B27A0C /* AccountSettingViewController.swift */,
 				06A105E4269E70AE00B27A0C /* AccountSettingViewController.xib */,
+				06A105ED269E803D00B27A0C /* AccountSettingViewModel.swift */,
 			);
 			path = AccountSetting;
+			sourceTree = "<group>";
+		};
+		06A105EC269E7FD600B27A0C /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				06A105E8269E7FD100B27A0C /* GenreViewController.swift */,
+				06A105E9269E7FD100B27A0C /* GenreViewController.xib */,
+			);
+			path = Genre;
 			sourceTree = "<group>";
 		};
 		06BB4EB726899852002B8576 = {
@@ -265,6 +281,7 @@
 				0672BF3D26956D0300DAA4C9 /* Register */,
 				0672BF4226956D3400DAA4C9 /* Login */,
 				06A105E7269E70B500B27A0C /* AccountSetting */,
+				06A105EC269E7FD600B27A0C /* Genre */,
 				06BB4EF8268999DD002B8576 /* Home */,
 				06BB4EFF2689A6D6002B8576 /* Search */,
 				06BB4F042689A6ED002B8576 /* Favorite */,
@@ -479,6 +496,7 @@
 				06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */,
 				06BB4EFE2689A6D2002B8576 /* SearchViewController.xib in Resources */,
 				06A105E6269E70AE00B27A0C /* AccountSettingViewController.xib in Resources */,
+				06A105EB269E7FD100B27A0C /* GenreViewController.xib in Resources */,
 				06BB4F032689A6E8002B8576 /* FavoriteViewController.xib in Resources */,
 				06BB4EF6268999D1002B8576 /* HomeViewController.xib in Resources */,
 				06BB4F082689A6FC002B8576 /* MyPageViewController.xib in Resources */,
@@ -616,6 +634,7 @@
 				0672BF442695720E00DAA4C9 /* AuthObject.swift in Sources */,
 				06BB4F23268C34F1002B8576 /* HomeViewModel.swift in Sources */,
 				0672BF4B269574FF00DAA4C9 /* AccountSettingModel.swift in Sources */,
+				06A105EA269E7FD100B27A0C /* GenreViewController.swift in Sources */,
 				06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */,
 				0672BF332695683E00DAA4C9 /* BaseViewController.swift in Sources */,
 				0672BF492695726D00DAA4C9 /* LoginViewModel.swift in Sources */,
@@ -625,6 +644,7 @@
 				0672BF362695688900DAA4C9 /* StartViewController.swift in Sources */,
 				0672BF3B26956CFE00DAA4C9 /* RegisterViewController.swift in Sources */,
 				06BB4F1D268C1296002B8576 /* ArtistCollectionViewCell.swift in Sources */,
+				06A105EE269E803D00B27A0C /* AccountSettingViewModel.swift in Sources */,
 				06BB4EF5268999D1002B8576 /* HomeViewController.swift in Sources */,
 				06BB4F022689A6E8002B8576 /* FavoriteViewController.swift in Sources */,
 				06BB4EFA26899A24002B8576 /* MusicNavigationController.swift in Sources */,
