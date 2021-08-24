@@ -212,6 +212,10 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Ballcap (0.6.0):
+    - Firebase
+    - Firebase/Firestore
+    - Firebase/Storage
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -425,6 +429,7 @@ PODS:
   - Toolbar (0.6.1)
 
 DEPENDENCIES:
+  - Ballcap
   - FFPopup
   - Firebase/Analytics
   - Firebase/Auth
@@ -446,6 +451,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - abseil
+    - Ballcap
     - BoringSSL-GRPC
     - Differentiator
     - FFPopup
@@ -485,6 +491,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  Ballcap: 567b92e53506bac8e129f0aaa764ce12af17fcf4
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   FFPopup: a208dcee8db3e54ec4a88fcd6481f6f5d85b7a83
@@ -522,6 +529,6 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Toolbar: 49165b7511132c7faee4883ad4f40ad5e8945225
 
-PODFILE CHECKSUM: 17d9d1d96a0ba488688721f7787bc80158270a3e
+PODFILE CHECKSUM: b204d162a481055acccc5fcfa3d45847647dffc0
 
 COCOAPODS: 1.10.1
