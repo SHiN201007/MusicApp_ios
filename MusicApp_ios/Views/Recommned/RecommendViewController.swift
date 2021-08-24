@@ -26,7 +26,9 @@ class RecommendViewController: UIViewController {
     cell.recommendMusicImageView.image = UIImage(named: item.musicImage)
     cell.recommendTitleLabel.text = item.title
     cell.recommendArtistLabel.text = item.artist
-    cell.recommendPreViewLabel.text = "\(item.preview)回視聴"
+    
+    let preview = DecimalStyleUtils.shared.configure(value: item.preview)
+    cell.recommendPreViewLabel.text = "\(preview)回視聴"
     
     return cell
   }
@@ -48,6 +50,7 @@ class RecommendViewController: UIViewController {
     tableView.rx.itemSelected
       .subscribe(onNext: { [weak self] indexPath in
         self?.tableView.deselectRow(at: indexPath, animated: true)
+        self?.showMusicViewController()
       })
       .disposed(by: disposeBag)
   }
@@ -58,6 +61,11 @@ class RecommendViewController: UIViewController {
     viewModel.outputs?.items
       .bind(to: tableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
+  }
+  
+  private func showMusicViewController() {
+    let vc = MusicViewController()
+    self.present(vc, animated: true, completion: nil)
   }
 
 }

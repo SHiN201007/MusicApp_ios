@@ -52,6 +52,7 @@
 		06F5808726D4B6E600161B80 /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808526D4B6E600161B80 /* RecommendTableViewCell.swift */; };
 		06F5808826D4B6E600161B80 /* RecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5808626D4B6E600161B80 /* RecommendTableViewCell.xib */; };
 		06F5808B26D4B83400161B80 /* ReccomendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808A26D4B83400161B80 /* ReccomendViewModel.swift */; };
+		06F5808E26D4C53000161B80 /* DecimalStyleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808D26D4C53000161B80 /* DecimalStyleUtils.swift */; };
 		096BABDC86962888E0987FA8 /* Pods_MusicApp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3C2ED490553BAFC59D9BD9 /* Pods_MusicApp_ios.framework */; };
 		3273E7CFE183C726FCEB985D /* libPods-MusicApp_iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8375A61FD8DF1E419B09A2 /* libPods-MusicApp_iosUITests.a */; };
 		5EE38069A54068CC75CB85BE /* libPods-MusicApp_iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B180DABDA4C5D91D17B85093 /* libPods-MusicApp_iosTests.a */; };
@@ -126,6 +127,7 @@
 		06F5808526D4B6E600161B80 /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
 		06F5808626D4B6E600161B80 /* RecommendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendTableViewCell.xib; sourceTree = "<group>"; };
 		06F5808A26D4B83400161B80 /* ReccomendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendViewModel.swift; sourceTree = "<group>"; };
+		06F5808D26D4C53000161B80 /* DecimalStyleUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalStyleUtils.swift; sourceTree = "<group>"; };
 		2DDC62A9167A07F59DAD5BD2 /* Pods-MusicApp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosTests/Pods-MusicApp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BA3F46B636B9DA8824E03B /* Pods-MusicApp_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosUITests/Pods-MusicApp_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		796FD70C89CD08017751DBEC /* Pods-MusicApp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_ios.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_ios/Pods-MusicApp_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				06BB4EC326899852002B8576 /* AppDelegate.swift */,
 				06BB4EC526899852002B8576 /* SceneDelegate.swift */,
 				06BB4EF926899A24002B8576 /* MusicNavigationController.swift */,
+				06F5808C26D4C50200161B80 /* Utils */,
 				0672BF452695721300DAA4C9 /* Objects */,
 				0672BF4C2695750700DAA4C9 /* Model */,
 				06BB4F0C2689AA4C002B8576 /* Extensions */,
@@ -390,6 +393,14 @@
 				06F5808626D4B6E600161B80 /* RecommendTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		06F5808C26D4C50200161B80 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				06F5808D26D4C53000161B80 /* DecimalStyleUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		236EFC313C7F65A221A45F2F /* Frameworks */ = {
@@ -689,6 +700,7 @@
 				06A105EE269E803D00B27A0C /* AccountSettingViewModel.swift in Sources */,
 				06BB4EF5268999D1002B8576 /* HomeViewController.swift in Sources */,
 				06BB4F022689A6E8002B8576 /* FavoriteViewController.swift in Sources */,
+				06F5808E26D4C53000161B80 /* DecimalStyleUtils.swift in Sources */,
 				06BB4EFA26899A24002B8576 /* MusicNavigationController.swift in Sources */,
 				06A105F0269E879600B27A0C /* GenreViewModel.swift in Sources */,
 				06A105E5269E70AE00B27A0C /* AccountSettingViewController.swift in Sources */,
