@@ -47,6 +47,11 @@
 		06BB4F23268C34F1002B8576 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4F22268C34F1002B8576 /* HomeViewModel.swift */; };
 		06BB4F26268C3C13002B8576 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB4F24268C3C13002B8576 /* MusicViewController.swift */; };
 		06BB4F27268C3C13002B8576 /* MusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BB4F25268C3C13002B8576 /* MusicViewController.xib */; };
+		06F5808226D4B65000161B80 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808026D4B65000161B80 /* RecommendViewController.swift */; };
+		06F5808326D4B65000161B80 /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5808126D4B65000161B80 /* RecommendViewController.xib */; };
+		06F5808726D4B6E600161B80 /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808526D4B6E600161B80 /* RecommendTableViewCell.swift */; };
+		06F5808826D4B6E600161B80 /* RecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5808626D4B6E600161B80 /* RecommendTableViewCell.xib */; };
+		06F5808B26D4B83400161B80 /* ReccomendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808A26D4B83400161B80 /* ReccomendViewModel.swift */; };
 		096BABDC86962888E0987FA8 /* Pods_MusicApp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3C2ED490553BAFC59D9BD9 /* Pods_MusicApp_ios.framework */; };
 		3273E7CFE183C726FCEB985D /* libPods-MusicApp_iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8375A61FD8DF1E419B09A2 /* libPods-MusicApp_iosUITests.a */; };
 		5EE38069A54068CC75CB85BE /* libPods-MusicApp_iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B180DABDA4C5D91D17B85093 /* libPods-MusicApp_iosTests.a */; };
@@ -116,6 +121,11 @@
 		06BB4F22268C34F1002B8576 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06BB4F24268C3C13002B8576 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		06BB4F25268C3C13002B8576 /* MusicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicViewController.xib; sourceTree = "<group>"; };
+		06F5808026D4B65000161B80 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		06F5808126D4B65000161B80 /* RecommendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
+		06F5808526D4B6E600161B80 /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
+		06F5808626D4B6E600161B80 /* RecommendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendTableViewCell.xib; sourceTree = "<group>"; };
+		06F5808A26D4B83400161B80 /* ReccomendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendViewModel.swift; sourceTree = "<group>"; };
 		2DDC62A9167A07F59DAD5BD2 /* Pods-MusicApp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosTests/Pods-MusicApp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BA3F46B636B9DA8824E03B /* Pods-MusicApp_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosUITests/Pods-MusicApp_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		796FD70C89CD08017751DBEC /* Pods-MusicApp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_ios.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_ios/Pods-MusicApp_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -293,6 +303,7 @@
 				06BB4F042689A6ED002B8576 /* Favorite */,
 				06BB4F092689A701002B8576 /* MyPage */,
 				06BB4F28268C3C17002B8576 /* Music */,
+				06F5808426D4B65300161B80 /* Recommned */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,6 +370,26 @@
 				06BB4F25268C3C13002B8576 /* MusicViewController.xib */,
 			);
 			path = Music;
+			sourceTree = "<group>";
+		};
+		06F5808426D4B65300161B80 /* Recommned */ = {
+			isa = PBXGroup;
+			children = (
+				06F5808026D4B65000161B80 /* RecommendViewController.swift */,
+				06F5808126D4B65000161B80 /* RecommendViewController.xib */,
+				06F5808A26D4B83400161B80 /* ReccomendViewModel.swift */,
+				06F5808926D4B6E900161B80 /* TableViewCell */,
+			);
+			path = Recommned;
+			sourceTree = "<group>";
+		};
+		06F5808926D4B6E900161B80 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				06F5808526D4B6E600161B80 /* RecommendTableViewCell.swift */,
+				06F5808626D4B6E600161B80 /* RecommendTableViewCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		236EFC313C7F65A221A45F2F /* Frameworks */ = {
@@ -500,12 +531,14 @@
 				0672BF4E2695792900DAA4C9 /* GoogleService-Info.plist in Resources */,
 				06BB4ED026899853002B8576 /* LaunchScreen.storyboard in Resources */,
 				06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */,
+				06F5808826D4B6E600161B80 /* RecommendTableViewCell.xib in Resources */,
 				06BB4EFE2689A6D2002B8576 /* SearchViewController.xib in Resources */,
 				06A105E6269E70AE00B27A0C /* AccountSettingViewController.xib in Resources */,
 				06A105EB269E7FD100B27A0C /* GenreViewController.xib in Resources */,
 				06BB4F032689A6E8002B8576 /* FavoriteViewController.xib in Resources */,
 				06BB4EF6268999D1002B8576 /* HomeViewController.xib in Resources */,
 				06BB4F082689A6FC002B8576 /* MyPageViewController.xib in Resources */,
+				06F5808326D4B65000161B80 /* RecommendViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,12 +666,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06F5808B26D4B83400161B80 /* ReccomendViewModel.swift in Sources */,
 				06BB4EFD2689A6D2002B8576 /* SearchViewController.swift in Sources */,
 				06BB4EC426899852002B8576 /* AppDelegate.swift in Sources */,
 				06BB4F072689A6FC002B8576 /* MyPageViewController.swift in Sources */,
 				0672BF4026956D3000DAA4C9 /* LoginViewController.swift in Sources */,
 				0672BF442695720E00DAA4C9 /* AuthObject.swift in Sources */,
 				06BB4F23268C34F1002B8576 /* HomeViewModel.swift in Sources */,
+				06F5808726D4B6E600161B80 /* RecommendTableViewCell.swift in Sources */,
 				0672BF4B269574FF00DAA4C9 /* AccountSettingModel.swift in Sources */,
 				06A105EA269E7FD100B27A0C /* GenreViewController.swift in Sources */,
 				06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */,
@@ -657,6 +692,7 @@
 				06BB4EFA26899A24002B8576 /* MusicNavigationController.swift in Sources */,
 				06A105F0269E879600B27A0C /* GenreViewModel.swift in Sources */,
 				06A105E5269E70AE00B27A0C /* AccountSettingViewController.swift in Sources */,
+				06F5808226D4B65000161B80 /* RecommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

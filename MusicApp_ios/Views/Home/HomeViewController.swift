@@ -118,9 +118,29 @@ class HomeViewController: BaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    configure()
     setupCollectionView()
     setupDatas()
     setupTapItems()
+  }
+  
+  private func configure() {
+    disposeBag.insert {
+      recommendButton.rx.tap
+        .subscribe(onNext: { [weak self] in
+          self?.showViewController(vc: RecommendViewController())
+        })
+      
+      artistButton.rx.tap
+        .subscribe(onNext: {
+          
+        })
+      
+      rankingButton.rx.tap
+        .subscribe(onNext: {
+          
+        })
+    }
   }
   
   private func setupTapItems() {
@@ -215,6 +235,10 @@ class HomeViewController: BaseViewController {
     self.present(vc, animated: true, completion: nil)
   }
   
+  private func showViewController(vc: UIViewController) {
+    self.navigationController?.pushViewController(vc, animated: true)
+  }
+  
   // MARK: -- SAMPLE DATA
   private func setupDatas() {
     setupRecommedData()
@@ -254,6 +278,7 @@ extension HomeViewController {
     setupCollectionView()
   }
   private func layoutConfigure() {
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     // view
     self.view.backgroundColor = .backgroundColor()
     backView.backgroundColor = .backgroundColor()
