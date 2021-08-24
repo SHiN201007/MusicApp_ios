@@ -128,7 +128,7 @@ class HomeViewController: BaseViewController {
     disposeBag.insert {
       recommendButton.rx.tap
         .subscribe(onNext: { [weak self] in
-          self?.showViewController(vc: RecommendViewController())
+          self?.showViewController(vc: RecommendViewController(), title: "あなたへのオススメ")
         })
       
       artistButton.rx.tap
@@ -235,7 +235,10 @@ class HomeViewController: BaseViewController {
     self.present(vc, animated: true, completion: nil)
   }
   
-  private func showViewController(vc: UIViewController) {
+  private func showViewController(vc: UIViewController, title: String?) {
+    if let _title = title {
+      vc.title = _title
+    }
     self.navigationController?.pushViewController(vc, animated: true)
   }
   
