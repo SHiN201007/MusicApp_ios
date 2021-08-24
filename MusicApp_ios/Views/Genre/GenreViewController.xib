@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="backView1" destination="71f-Zg-hsM" id="fSD-yr-pcl"/>
                 <outlet property="backView2" destination="lTW-EZ-eD7" id="Z0a-BU-beK"/>
+                <outlet property="genreImageView" destination="zM7-4R-d4m" id="eeK-4Z-Mja"/>
                 <outlet property="genreView" destination="CcS-CE-mUf" id="mkD-al-Uup"/>
                 <outlet property="noButton" destination="62t-uu-bQV" id="1hk-d9-H7g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -52,7 +53,18 @@
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcS-CE-mUf">
                     <rect key="frame" x="50" y="60" width="275" height="427"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-4R-d4m">
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="427"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstItem="zM7-4R-d4m" firstAttribute="top" secondItem="CcS-CE-mUf" secondAttribute="top" id="Dca-23-FQb"/>
+                        <constraint firstAttribute="trailing" secondItem="zM7-4R-d4m" secondAttribute="trailing" id="TXm-uC-qjs"/>
+                        <constraint firstAttribute="bottom" secondItem="zM7-4R-d4m" secondAttribute="bottom" id="fYf-6m-ZR8"/>
+                        <constraint firstItem="zM7-4R-d4m" firstAttribute="leading" secondItem="CcS-CE-mUf" secondAttribute="leading" id="xKz-af-MBU"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

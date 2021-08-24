@@ -14,6 +14,7 @@ struct GenreViewModelInput {
   var noButton: Observable<Void>
 }
 protocol GenreViewModelOutput {
+  var showChangeObservable: Observable<Bool> { get }
   var showViewObservable: Observable<Bool> { get }
 }
 protocol GenreViewModelType {
@@ -26,6 +27,7 @@ class GenreViewModel: GenreViewModelType {
   var outputs: GenreViewModelOutput?
   private let disposeBag = DisposeBag()
   
+  private let showChangeSubject = PublishSubject<Bool>()
   private let showViewSubject = PublishSubject<Bool>()
   
   init() {
@@ -56,6 +58,10 @@ class GenreViewModel: GenreViewModelType {
 }
 // MARK:-- GenreViewModelOutput
 extension GenreViewModel: GenreViewModelOutput {
+  var showChangeObservable: Observable<Bool> {
+    return showChangeSubject.asObservable()
+  }
+  
   var showViewObservable: Observable<Bool> {
     return showViewSubject.asObservable()
   }

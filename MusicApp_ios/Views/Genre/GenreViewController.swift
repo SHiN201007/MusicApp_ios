@@ -14,6 +14,7 @@ class GenreViewController: UIViewController {
   @IBOutlet weak var backView1: UIView!
   @IBOutlet weak var backView2: UIView!
   @IBOutlet weak var genreView: UIView!
+  @IBOutlet weak var genreImageView: UIImageView!
   @IBOutlet weak var yesButton: UIButton!
   @IBOutlet weak var noButton: UIButton!
   
@@ -32,6 +33,15 @@ class GenreViewController: UIViewController {
     viewModel?.setupActions(input: input)
     
     // outputs
+    viewModel?.outputs?.showChangeObservable
+      .subscribe(onNext: { value in
+        if value {
+          
+        }
+      })
+      .disposed(by: disposeBag)
+    
+    
     viewModel?.outputs?.showViewObservable
       .subscribe(onNext: { value in
         print("test", value)
