@@ -28,6 +28,7 @@ class RecommendTableViewCell: UITableViewCell {
   }
   
   private func layoutConfigure() {
+    self.contentView.backgroundColor = .backgroundColor()
     setupRecommendView(musicImageView: recommendMusicImageView,
                        titleLabel: recommendTitleLabel,
                        artistLabel: recommendArtistLabel,
