@@ -18,12 +18,14 @@ class ArtistDetailViewModel {
   private var _input: ArtistDetailViewModel.Input!
   private var _output: ArtistDetailViewModel.Output!
   
+  private let model = ArtistMusicModel()
   private let disposeBag = DisposeBag()
   
   init(trigger: ArtistDetailViewModel.Input) {
     _input = trigger
     _output = ArtistDetailViewModel.Output.init()
-    bind()
+    // model
+    
   }
   
   private func bind() {
