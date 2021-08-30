@@ -141,7 +141,7 @@ class HomeViewController: BaseViewController {
       // ranking
       rankingButton.rx.tap
         .bind(to: Binder(self) { me, _ in
-//          me.showViewController(vc: RecommendViewController(), title: "人気ヒットチャート")
+          me.showViewController(vc: RankingViewController(), title: "人気ヒットチャート")
         })
     }
   }
