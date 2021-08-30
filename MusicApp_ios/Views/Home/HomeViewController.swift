@@ -101,8 +101,6 @@ class HomeViewController: BaseViewController {
   @IBOutlet weak var ranking5PreViewLabel: UILabel!
   @IBOutlet weak var ranking5MenuImageView: UIImageView!
   
-  private let disposeBag = DisposeBag()
-  
   // tapGuesture
   /// recommend
   private var recommendTapGuesture1: UITapGestureRecognizer!
@@ -116,9 +114,13 @@ class HomeViewController: BaseViewController {
   private var rankingTapGuesture4: UITapGestureRecognizer!
   private var rankingTapGuesture5: UITapGestureRecognizer!
   
+  private var viewModel: HomeViewModel!
+  private let disposeBag = DisposeBag()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
+    setupViewModel()
     setupCollectionView()
     setupDatas()
     setupTapItems()
@@ -240,6 +242,16 @@ class HomeViewController: BaseViewController {
       vc.title = _title
     }
     self.navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  // MARK: -- setup viewModel
+  private func setupViewModel() {
+    let input = HomeViewModel.Input()
+    viewModel = HomeViewModel(trigger: input)
+    
+    // output
+    let output = viewModel.output()
+    
   }
   
   // MARK: -- SAMPLE DATA
