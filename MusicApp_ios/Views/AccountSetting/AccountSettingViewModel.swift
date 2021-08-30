@@ -82,9 +82,9 @@ class AccountSettingViewModel: AccountSettingViewModelType {
             KRProgressHUD.showError(withMessage: "未入力項目があります")
           }else {
             // set user data
-            self.model.updateAccoundData(userName: userName, gender: self.gender, { error in
+            self.model.updateAccoundData(userName: userName, gender: self.gender, {
               // error
-              KRProgressHUD.showError(withMessage: error)
+              KRProgressHUD.showError(withMessage: "更新失敗")
             }, {
               // succsess
               UserDefaults.standard.setValue(true, forKey: "login")
