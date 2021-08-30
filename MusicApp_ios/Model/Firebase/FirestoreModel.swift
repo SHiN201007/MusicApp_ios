@@ -14,13 +14,13 @@ import Ballcap
 
 //MARK: -- User
 class Users: Object, DataRepresentable & HierarchicalStructurable {
-  var data: users?
+  var data: user?
   // NestedCollection
   var favorite: [Favorites] = []
   var recommend: [Recommends] = []
   var history: [Histories] = []
   
-  struct users: Modelable & Codable {
+  struct user: Modelable & Codable {
     var name: String = ""
     var gender: Int = 0
   }
@@ -34,9 +34,9 @@ class Users: Object, DataRepresentable & HierarchicalStructurable {
 
 //MARK: -- Favorite
 class Favorites: Object {
-  var data: Favorites?
+  var data: favorite?
   
-  struct Favorite: Modelable & Codable {
+  struct favorite: Modelable & Codable {
     var musicId: String = ""
     var artistId: String = ""
     var albumId: String = ""
@@ -45,51 +45,49 @@ class Favorites: Object {
 
 //MARK: -- Recommend
 class Recommends: Object {
-  var data: Recommends?
+  var data: recommend?
 
-  struct Recommend: Modelable & Codable {
+  struct recommend: Modelable & Codable {
     var musicId: String = ""
   }
 }
 
 //MARK: -- History
 class Histories: Object {
-  var data: History?
+  var data: history?
   
-  struct History: Modelable & Codable {
+  struct history: Modelable & Codable {
     var musicId: String = ""
   }
 }
 
 // MARK: -- Music
 class Musics: Object {
-  var data: Musics?
+  var data: music?
   
-  struct Musics: Modelable & Codable {
+  struct music: Modelable & Codable {
     var name: String = ""
-    var musicUrl: String = ""
-    var genre: Int = 0
-    var count: Int = 0
-    var artistId: String = ""
   }
 }
 
 // MARK: -- Album
 class Albums: Object {
-  var data: Album?
+  var data: album?
   
-  struct Album: Modelable & Codable {
+  struct album: Modelable & Codable {
     var name: String = ""
     var artistId: String = ""
     var musicIds: [String] = []
+    var thumbnailURL: String = ""
   }
 }
 
 // MARK: -- Artists
 class Artists: Object {
-  var data: Artist?
+  var data: artist?
   
-  struct Artist: Modelable & Codable {
+  struct artist: Modelable & Codable {
     var name: String = ""
+    var thumbnailURL: String = ""
   }
 }

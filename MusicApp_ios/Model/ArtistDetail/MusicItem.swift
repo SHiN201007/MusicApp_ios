@@ -9,7 +9,4 @@ import Foundation
 
 struct MusicItem {
   var name: String = ""
-  var genre: Int = 0
-  var count: Int = 0
-  var artistName: String = ""
 }

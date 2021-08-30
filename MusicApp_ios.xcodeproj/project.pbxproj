@@ -248,9 +248,9 @@
 			isa = PBXGroup;
 			children = (
 				067BB9B226DCBE1800253E23 /* Firebase */,
-				067BB9B426DCBE2700253E23 /* ArtistDetail */,
 				067BB9B326DCBE1F00253E23 /* AccountSettings */,
 				067BB9BD26DCBF1C00253E23 /* Artist */,
+				067BB9B426DCBE2700253E23 /* ArtistDetail */,
 				067BB9C626DCBFAB00253E23 /* Ranking */,
 			);
 			path = Model;

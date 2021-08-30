@@ -8,5 +8,6 @@
 import Foundation
 
 struct ArtistItem {
-  
+  var name: String
+  var thumbnailImage: String
 }

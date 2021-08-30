@@ -25,11 +25,13 @@ class ArtistDetailViewModel {
     _input = trigger
     _output = ArtistDetailViewModel.Output.init()
     // model
-    
+    bind()
   }
   
   private func bind() {
-    
+    model.getArtistMusicList { items in
+      print("ITEM:", items)
+    }
   }
   
   // MARK: -- OUTPUT

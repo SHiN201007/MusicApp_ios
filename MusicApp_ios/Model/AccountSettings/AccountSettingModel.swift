@@ -55,7 +55,7 @@ class AccountSettingModel {
   
   private func userSetUp(failure: @escaping () -> Void, succsess: @escaping () -> Void) {
     if let currentUser = Auth.auth().currentUser?.uid {
-      let user: Document<Users.users> = Document(id: currentUser)
+      let user: Document<Users.user> = Document(id: currentUser)
       
       let batch = Batch()
       let ref = db.collection("User").document(currentUser)
@@ -74,7 +74,7 @@ class AccountSettingModel {
   // MARK: -- Account setting
   func updateAccoundData(userName: String, gender: Int, _ failure: @escaping () -> Void, _ succsess: @escaping () -> Void) {
     guard let uid: String = Auth.auth().currentUser?.uid else { return }
-    let users: Document<Users.users> = Document(id: uid)
+    let users: Document<Users.user> = Document(id: uid)
     users.data?.name = userName
     users.data?.gender = gender
     
