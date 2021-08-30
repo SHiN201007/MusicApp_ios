@@ -10,7 +10,9 @@ import RxSwift
 import RxCocoa
 
 class ArtistViewController: UIViewController {
-
+  
+  @IBOutlet weak var collectionView: UICollectionView!
+  
   private let disposeBag = DisposeBag()
   
   override func viewDidLoad() {

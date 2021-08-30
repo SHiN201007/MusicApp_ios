@@ -11,6 +11,8 @@ import RxCocoa
 
 class RankingViewController: UIViewController {
 
+  @IBOutlet weak var tableView: UITableView!
+  
   private let disposeBag = DisposeBag()
   
   override func viewDidLoad() {

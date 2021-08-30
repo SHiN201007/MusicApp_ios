@@ -10,7 +10,10 @@ import RxSwift
 import RxCocoa
 
 class ArtistDetailViewController: UIViewController {
-
+  
+  @IBOutlet weak var thumbnailImageView: UIImageView!
+  @IBOutlet weak var tableView: UITableView!
+  
   private let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
