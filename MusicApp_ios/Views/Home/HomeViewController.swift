@@ -128,19 +128,20 @@ class HomeViewController: BaseViewController {
   
   private func configure() {
     disposeBag.insert {
+      // recommend
       recommendButton.rx.tap
-        .subscribe(onNext: { [weak self] in
-          self?.showViewController(vc: RecommendViewController(), title: "あなたへのオススメ")
+        .bind(to: Binder(self) { me, _ in
+          me.showViewController(vc: RecommendViewController(), title: "あなたへのオススメ")
         })
-      
+      // artist
       artistButton.rx.tap
-        .subscribe(onNext: {
-          
+        .bind(to: Binder(self) { me, _ in
+          me.showViewController(vc: ArtistViewController(), title: "人気アーティスト")
         })
-      
+      // ranking
       rankingButton.rx.tap
-        .subscribe(onNext: {
-          
+        .bind(to: Binder(self) { me, _ in
+//          me.showViewController(vc: RecommendViewController(), title: "人気ヒットチャート")
         })
     }
   }
@@ -250,7 +251,7 @@ class HomeViewController: BaseViewController {
     viewModel = HomeViewModel(trigger: input)
     
     // output
-    let output = viewModel.output()
+//    let output = viewModel.output()
     
   }
   
