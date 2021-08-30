@@ -18,6 +18,8 @@ class HomeViewModel {
   private var _input: HomeViewModel.Input!
   private var _output: HomeViewModel.Output!
   
+  private let disposeBag = DisposeBag()
+  
   init(trigger: HomeViewModel.Input) {
     _input = trigger
     _output = HomeViewModel.Output.init()

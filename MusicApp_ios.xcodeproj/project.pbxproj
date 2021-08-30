@@ -25,6 +25,7 @@
 		067BB9A926DCB8A100253E23 /* RankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067BB9A726DCB8A100253E23 /* RankingViewController.xib */; };
 		067BB9AD26DCB93B00253E23 /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9AB26DCB93B00253E23 /* ArtistDetailViewController.swift */; };
 		067BB9AE26DCB93B00253E23 /* ArtistDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067BB9AC26DCB93B00253E23 /* ArtistDetailViewController.xib */; };
+		067BB9B126DCBD7000253E23 /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9B026DCBD7000253E23 /* ArtistDetailViewModel.swift */; };
 		06A105E5269E70AE00B27A0C /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105E3269E70AE00B27A0C /* AccountSettingViewController.swift */; };
 		06A105E6269E70AE00B27A0C /* AccountSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A105E4269E70AE00B27A0C /* AccountSettingViewController.xib */; };
 		06A105EA269E7FD100B27A0C /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105E8269E7FD100B27A0C /* GenreViewController.swift */; };
@@ -100,6 +101,7 @@
 		067BB9A726DCB8A100253E23 /* RankingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingViewController.xib; sourceTree = "<group>"; };
 		067BB9AB26DCB93B00253E23 /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
 		067BB9AC26DCB93B00253E23 /* ArtistDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistDetailViewController.xib; sourceTree = "<group>"; };
+		067BB9B026DCBD7000253E23 /* ArtistDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModel.swift; sourceTree = "<group>"; };
 		06A105E3269E70AE00B27A0C /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		06A105E4269E70AE00B27A0C /* AccountSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingViewController.xib; sourceTree = "<group>"; };
 		06A105E8269E7FD100B27A0C /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				067BB9AB26DCB93B00253E23 /* ArtistDetailViewController.swift */,
 				067BB9AC26DCB93B00253E23 /* ArtistDetailViewController.xib */,
+				067BB9B026DCBD7000253E23 /* ArtistDetailViewModel.swift */,
 			);
 			path = ArtistDetail;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				06F5808726D4B6E600161B80 /* RecommendTableViewCell.swift in Sources */,
 				0672BF4B269574FF00DAA4C9 /* AccountSettingModel.swift in Sources */,
 				06A105EA269E7FD100B27A0C /* GenreViewController.swift in Sources */,
+				067BB9B126DCBD7000253E23 /* ArtistDetailViewModel.swift in Sources */,
 				06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */,
 				0672BF332695683E00DAA4C9 /* BaseViewController.swift in Sources */,
 				0672BF492695726D00DAA4C9 /* LoginViewModel.swift in Sources */,

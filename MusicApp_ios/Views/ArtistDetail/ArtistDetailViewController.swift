@@ -14,6 +14,7 @@ class ArtistDetailViewController: UIViewController {
   @IBOutlet weak var thumbnailImageView: UIImageView!
   @IBOutlet weak var tableView: UITableView!
   
+  private var viewModel: RecommnedViewModel!
   private let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
@@ -30,5 +31,6 @@ extension ArtistDetailViewController {
   
   private func layoutConfigure() {
     self.view.backgroundColor = .backgroundColor()
+    
   }
 }
