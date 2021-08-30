@@ -438,5 +438,7 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 // MARK: -- UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    self.showViewController(vc: ArtistDetailViewController(), title: "ONE OK ROCK")
+  }
 }
