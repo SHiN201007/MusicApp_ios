@@ -14,7 +14,7 @@ class RecommendViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
-  private var viewModel: RecommnedViewModel!
+  private var viewModel: RecommendViewModel!
   private let disposeBag = DisposeBag()
   
   private lazy var dataSource = RxTableViewSectionedReloadDataSource<SectionRecommend>(configureCell: configureCell)
@@ -56,9 +56,12 @@ class RecommendViewController: UIViewController {
   }
   
   private func setupViewModel() {
-    viewModel = RecommnedViewModel()
+    let input = RecommendViewModel.Input()
+    viewModel = RecommendViewModel(trigger: input)
     
-    viewModel.outputs?.items
+    // output
+    let output = viewModel.output()
+    output.items
       .bind(to: tableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
   }

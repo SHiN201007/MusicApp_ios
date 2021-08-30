@@ -48,7 +48,7 @@ class Recommends: Object {
   var data: recommend?
 
   struct recommend: Modelable & Codable {
-    var musicId: String = ""
+    var re_music_id: String = ""
   }
 }
 

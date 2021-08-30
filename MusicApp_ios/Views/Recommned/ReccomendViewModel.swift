@@ -10,56 +10,64 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-struct RecommendItem {
-  var musicImage: String
-  var title: String
-  var artist: String
-  var preview: Int
-}
+//
+//protocol RecommendViewModelOutput {
+//  var items: Observable<[SectionRecommend]> { get }
+//}
+//protocol RecommendViewModelType {
+//  var outputs: RecommendViewModelOutput? { get }
+//}
+//
+//class RecommnedViewModel: RecommendViewModelType {
+//  var outputs: RecommendViewModelOutput?
+//
+//  private var itemsRelay = BehaviorRelay<[SectionRecommend]>(value: [])
+//
+//  init() {
+//    self.outputs = self
+//    sampleRecommnedData()
+//  }
+//
+//
+//}
+//extension RecommnedViewModel: RecommendViewModelOutput {
+//  var items: Observable<[SectionRecommend]> {
+//    return itemsRelay.asObservable()
+//  }
+//}
 
-struct SectionRecommend {
-  var items: [Item]
-}
-extension SectionRecommend: SectionModelType {
-  typealias Item = RecommendItem
-
-  init(original: SectionRecommend, items: [SectionRecommend.Item]) {
-    self = original
-    self.items = items
+class RecommendViewModel {
+  
+  struct Input {}
+  
+  struct Output {
+    var items: Observable<[SectionRecommend]>
   }
-}
-
-protocol RecommendViewModelOutput {
-  var items: Observable<[SectionRecommend]> { get }
-}
-protocol RecommendViewModelType {
-  var outputs: RecommendViewModelOutput? { get }
-}
-
-class RecommnedViewModel: RecommendViewModelType {
-  var outputs: RecommendViewModelOutput?
+  
+  private var _input: RecommendViewModel.Input!
+  private var _output: RecommendViewModel.Output!
+  
+  private let model = RecommendModel()
+  private let disposeBag = DisposeBag()
   
   private var itemsRelay = BehaviorRelay<[SectionRecommend]>(value: [])
   
-  init() {
-    self.outputs = self
-    sampleRecommnedData()
+  init(trigger: RecommendViewModel.Input) {
+    _input = trigger
+    _output = RecommendViewModel.Output.init(items: itemsRelay.asObservable())
+    // get
+    bind()
   }
   
-  private func sampleRecommnedData() {
-    var items: [SectionRecommend] = []
-    
-    for _ in 0...10 {
-      items.append(SectionRecommend(items: [SectionRecommend.Item(musicImage: "oneokrock",
-                                                                  title: "Cry Baby",
-                                                                  artist: "Official髭男dism",
-                                                                  preview: 101232)]))
+  private func bind() {
+    model.getRecommendMusicList { [weak self] items in
+      print("item", items)
+      self?.itemsRelay.accept(items)
     }
-    itemsRelay.accept(items)
   }
-}
-extension RecommnedViewModel: RecommendViewModelOutput {
-  var items: Observable<[SectionRecommend]> {
-    return itemsRelay.asObservable()
+  
+  // MARK: -- OUTPUT
+  func output() -> RecommendViewModel.Output {
+    return _output
   }
 }
