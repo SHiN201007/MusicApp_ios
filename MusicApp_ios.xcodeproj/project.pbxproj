@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061ACD8926DCA5B0005BD734 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061ACD8726DCA5B0005BD734 /* ArtistViewController.swift */; };
+		061ACD8A26DCA5B0005BD734 /* ArtistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061ACD8826DCA5B0005BD734 /* ArtistViewController.xib */; };
 		0672BF332695683E00DAA4C9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0672BF322695683E00DAA4C9 /* BaseViewController.swift */; };
 		0672BF362695688900DAA4C9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0672BF342695688900DAA4C9 /* StartViewController.swift */; };
 		0672BF372695688900DAA4C9 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0672BF352695688900DAA4C9 /* StartViewController.xib */; };
@@ -76,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		061ACD8726DCA5B0005BD734 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
+		061ACD8826DCA5B0005BD734 /* ArtistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistViewController.xib; sourceTree = "<group>"; };
 		0672BF322695683E00DAA4C9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0672BF342695688900DAA4C9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		0672BF352695688900DAA4C9 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
@@ -167,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061ACD8B26DCA5B3005BD734 /* Artist */ = {
+			isa = PBXGroup;
+			children = (
+				061ACD8726DCA5B0005BD734 /* ArtistViewController.swift */,
+				061ACD8826DCA5B0005BD734 /* ArtistViewController.xib */,
+			);
+			path = Artist;
+			sourceTree = "<group>";
+		};
 		0672BF382695688E00DAA4C9 /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +320,7 @@
 				06BB4F092689A701002B8576 /* MyPage */,
 				06BB4F28268C3C17002B8576 /* Music */,
 				06F5808426D4B65300161B80 /* Recommned */,
+				061ACD8B26DCA5B3005BD734 /* Artist */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -544,6 +558,7 @@
 				06BB4ECD26899853002B8576 /* Assets.xcassets in Resources */,
 				06F5808826D4B6E600161B80 /* RecommendTableViewCell.xib in Resources */,
 				06BB4EFE2689A6D2002B8576 /* SearchViewController.xib in Resources */,
+				061ACD8A26DCA5B0005BD734 /* ArtistViewController.xib in Resources */,
 				06A105E6269E70AE00B27A0C /* AccountSettingViewController.xib in Resources */,
 				06A105EB269E7FD100B27A0C /* GenreViewController.xib in Resources */,
 				06BB4F032689A6E8002B8576 /* FavoriteViewController.xib in Resources */,
@@ -705,6 +720,7 @@
 				06A105F0269E879600B27A0C /* GenreViewModel.swift in Sources */,
 				06A105E5269E70AE00B27A0C /* AccountSettingViewController.swift in Sources */,
 				06F5808226D4B65000161B80 /* RecommendViewController.swift in Sources */,
+				061ACD8926DCA5B0005BD734 /* ArtistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
