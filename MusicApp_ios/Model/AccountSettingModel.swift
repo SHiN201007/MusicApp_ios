@@ -7,7 +7,10 @@
 
 import Foundation
 import Firebase
-import Pring
+//import Pring
+import Ballcap
+
+let db = Firestore.firestore()
 
 class AccountSettingModel {
   // MARK: -- Regiser
@@ -41,46 +44,51 @@ class AccountSettingModel {
         print("error", _error)
         failure("ログインできませんでした。")
       }else {
-        self.userSetUp {
+        self.userSetUp(failure: {
+          failure("ログインできませんでした。")
+        }, succsess: {
           success()
-        }
+        })
       }
     }
   }
   
-  private func userSetUp(completion: @escaping () -> Void) {
-    if let currentUser = Auth.auth().currentUser {
-      let user = Firestore.User(id: currentUser.uid)
-      let favorite = Firestore.Favorite()
-      let recommend = Firestore.Recommend()
-      let history = Firestore.History()
-      user.Favorite.insert(favorite)
-      user.Recommend.insert(recommend)
-      user.History.insert(history)
-      favorite.delete()
-      recommend.delete()
-      history.delete()
-      user.save()
-      completion()
+  private func userSetUp(failure: @escaping () -> Void, succsess: @escaping () -> Void) {
+    if let currentUser = Auth.auth().currentUser?.uid {
+      let user: Document<Users.users> = Document(id: currentUser)
+      
+      let batch = Batch()
+      let ref = db.collection("User").document(currentUser)
+      
+      batch.save(user, reference: ref)
+      batch.commit({ error in
+        if let _error = error {
+          print(_error.localizedDescription)
+          failure()
+        }
+        succsess()
+      })
     }
   }
   
   // MARK: -- Account setting
-  func updateAccoundData(userName: String, gender: Int, _ failure: @escaping (String) -> Void, _ completion: @escaping () -> Void) {
+  func updateAccoundData(userName: String, gender: Int, _ failure: @escaping () -> Void, _ succsess: @escaping () -> Void) {
     guard let uid: String = Auth.auth().currentUser?.uid else { return }
-    Firestore.User.get(uid) { user, error in
+    let users: Document<Users.users> = Document(id: uid)
+    users.data?.name = userName
+    users.data?.gender = gender
+    
+    let batch = Batch()
+    let ref = db.collection("User").document(uid)
+    batch.update(users, reference: ref)
+    
+    batch.commit({ error in
       if let _error = error {
-        print(_error)
-        failure("アップロード失敗")
+        print(_error.localizedDescription)
+        failure()
       }
-      
-      user?.name = userName
-      user?.gender = gender
-      
-      user?.update({ _ in
-        completion()
-      })
-    }
+      succsess()
+    })
   }
   
   // upload user icon

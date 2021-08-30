@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-struct Recommend {
+struct RecommendItem {
   var musicImage: String
   var title: String
   var artist: String
@@ -21,7 +21,7 @@ struct SectionRecommend {
   var items: [Item]
 }
 extension SectionRecommend: SectionModelType {
-  typealias Item = Recommend
+  typealias Item = RecommendItem
 
   init(original: SectionRecommend, items: [SectionRecommend.Item]) {
     self = original

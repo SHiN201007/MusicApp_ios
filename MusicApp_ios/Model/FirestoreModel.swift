@@ -7,61 +7,89 @@
 
 import Foundation
 import Firebase
-import Pring
-import Muni
+//import Pring
+//import Muni
 
-extension Firestore {
-  @objcMembers
-  class User: Object, UserProtocol {
-    
-    dynamic var thumbnailImage: File? // nil
-    
-    dynamic var name: String?
-    dynamic var gender: Int = 0
-    dynamic var Favorite: NestedCollection<Favorite> = []
-    dynamic var Recommend: NestedCollection<Recommend> = []
-    dynamic var History: NestedCollection<History> = []
+import Ballcap
+
+//MARK: -- User
+class Users: Object, DataRepresentable & HierarchicalStructurable {
+  var data: users?
+  // NestedCollection
+  var favorite: [Favorites] = []
+  var recommend: [Recommends] = []
+  var history: [Histories] = []
+  
+  struct users: Modelable & Codable {
+    var name: String = ""
+    var gender: Int = 0
   }
   
-  // MARK: -- Favorite
-  @objcMembers
-  class Favorite: Object {
-    dynamic var musicId: String = ""
-    dynamic var artistId: String = ""
-    dynamic var albumId: String = ""
+  enum CollectionKeys: String {
+    case favorite
+    case recommend
+    case history
   }
-  // MARK: -- Recommend
-  @objcMembers
-  class Recommend: Object {
-    dynamic var musicId: String = ""
-  }
-  // MARK: -- Recommend
-  @objcMembers
-  class History: Object {
-    dynamic var musicId: String = ""
-  }
-    
-    
-  // MARK:-- Music
-  @objcMembers
-  class Music: Object {
-    dynamic var name: String = ""
-    dynamic var musicUrl: String = ""
-    dynamic var genre: Int = 0
-    dynamic var count: Int = 0
-    dynamic var artistId: String = ""
-  }
+}
+
+//MARK: -- Favorite
+class Favorites: Object {
+  var data: Favorites?
   
-  // MARK:-- Album
-  @objcMembers
-  class Album: Object {
-    dynamic var name: String = ""
-    dynamic var artistId: String = ""
-    dynamic var musicIds: [String] = []
+  struct Favorite: Modelable & Codable {
+    var musicId: String = ""
+    var artistId: String = ""
+    var albumId: String = ""
   }
+}
+
+//MARK: -- Recommend
+class Recommends: Object {
+  var data: Recommends?
+
+  struct Recommend: Modelable & Codable {
+    var musicId: String = ""
+  }
+}
+
+//MARK: -- History
+class Histories: Object {
+  var data: History?
   
-  @objcMembers
-  class Artist: Object {
-    dynamic var name: String = ""
+  struct History: Modelable & Codable {
+    var musicId: String = ""
+  }
+}
+
+// MARK: -- Music
+class Musics: Object {
+  var data: Musics?
+  
+  struct Musics: Modelable & Codable {
+    var name: String = ""
+    var musicUrl: String = ""
+    var genre: Int = 0
+    var count: Int = 0
+    var artistId: String = ""
+  }
+}
+
+// MARK: -- Album
+class Albums: Object {
+  var data: Album?
+  
+  struct Album: Modelable & Codable {
+    var name: String = ""
+    var artistId: String = ""
+    var musicIds: [String] = []
+  }
+}
+
+// MARK: -- Artists
+class Artists: Object {
+  var data: Artist?
+  
+  struct Artist: Modelable & Codable {
+    var name: String = ""
   }
 }
