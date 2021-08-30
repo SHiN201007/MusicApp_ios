@@ -28,6 +28,12 @@
 		067BB9B126DCBD7000253E23 /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9B026DCBD7000253E23 /* ArtistDetailViewModel.swift */; };
 		067BB9B626DCBE4C00253E23 /* ArtistMusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9B526DCBE4C00253E23 /* ArtistMusicModel.swift */; };
 		067BB9B826DCBE7000253E23 /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9B726DCBE7000253E23 /* MusicItem.swift */; };
+		067BB9BA26DCBEFC00253E23 /* ArtistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9B926DCBEFC00253E23 /* ArtistViewModel.swift */; };
+		067BB9BC26DCBF1900253E23 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9BB26DCBF1900253E23 /* ArtistModel.swift */; };
+		067BB9BF26DCBF2500253E23 /* ArtistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9BE26DCBF2500253E23 /* ArtistItem.swift */; };
+		067BB9C126DCBF5200253E23 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9C026DCBF5200253E23 /* RankingModel.swift */; };
+		067BB9C326DCBF6100253E23 /* RankingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9C226DCBF6100253E23 /* RankingItem.swift */; };
+		067BB9C526DCBF8C00253E23 /* RankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB9C426DCBF8C00253E23 /* RankingViewModel.swift */; };
 		06A105E5269E70AE00B27A0C /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105E3269E70AE00B27A0C /* AccountSettingViewController.swift */; };
 		06A105E6269E70AE00B27A0C /* AccountSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A105E4269E70AE00B27A0C /* AccountSettingViewController.xib */; };
 		06A105EA269E7FD100B27A0C /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A105E8269E7FD100B27A0C /* GenreViewController.swift */; };
@@ -106,6 +112,12 @@
 		067BB9B026DCBD7000253E23 /* ArtistDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModel.swift; sourceTree = "<group>"; };
 		067BB9B526DCBE4C00253E23 /* ArtistMusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistMusicModel.swift; sourceTree = "<group>"; };
 		067BB9B726DCBE7000253E23 /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
+		067BB9B926DCBEFC00253E23 /* ArtistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewModel.swift; sourceTree = "<group>"; };
+		067BB9BB26DCBF1900253E23 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
+		067BB9BE26DCBF2500253E23 /* ArtistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistItem.swift; sourceTree = "<group>"; };
+		067BB9C026DCBF5200253E23 /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
+		067BB9C226DCBF6100253E23 /* RankingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingItem.swift; sourceTree = "<group>"; };
+		067BB9C426DCBF8C00253E23 /* RankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewModel.swift; sourceTree = "<group>"; };
 		06A105E3269E70AE00B27A0C /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		06A105E4269E70AE00B27A0C /* AccountSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingViewController.xib; sourceTree = "<group>"; };
 		06A105E8269E7FD100B27A0C /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 			children = (
 				061ACD8726DCA5B0005BD734 /* ArtistViewController.swift */,
 				061ACD8826DCA5B0005BD734 /* ArtistViewController.xib */,
+				067BB9B926DCBEFC00253E23 /* ArtistViewModel.swift */,
 			);
 			path = Artist;
 			sourceTree = "<group>";
@@ -237,6 +250,8 @@
 				067BB9B226DCBE1800253E23 /* Firebase */,
 				067BB9B426DCBE2700253E23 /* ArtistDetail */,
 				067BB9B326DCBE1F00253E23 /* AccountSettings */,
+				067BB9BD26DCBF1C00253E23 /* Artist */,
+				067BB9C626DCBFAB00253E23 /* Ranking */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +261,7 @@
 			children = (
 				067BB9A626DCB8A100253E23 /* RankingViewController.swift */,
 				067BB9A726DCB8A100253E23 /* RankingViewController.xib */,
+				067BB9C426DCBF8C00253E23 /* RankingViewModel.swift */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -283,6 +299,24 @@
 				067BB9B726DCBE7000253E23 /* MusicItem.swift */,
 			);
 			path = ArtistDetail;
+			sourceTree = "<group>";
+		};
+		067BB9BD26DCBF1C00253E23 /* Artist */ = {
+			isa = PBXGroup;
+			children = (
+				067BB9BB26DCBF1900253E23 /* ArtistModel.swift */,
+				067BB9BE26DCBF2500253E23 /* ArtistItem.swift */,
+			);
+			path = Artist;
+			sourceTree = "<group>";
+		};
+		067BB9C626DCBFAB00253E23 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				067BB9C026DCBF5200253E23 /* RankingModel.swift */,
+				067BB9C226DCBF6100253E23 /* RankingItem.swift */,
+			);
+			path = Ranking;
 			sourceTree = "<group>";
 		};
 		06A105E7269E70B500B27A0C /* AccountSetting */ = {
@@ -759,6 +793,7 @@
 				06BB4EFD2689A6D2002B8576 /* SearchViewController.swift in Sources */,
 				06BB4EC426899852002B8576 /* AppDelegate.swift in Sources */,
 				06BB4F072689A6FC002B8576 /* MyPageViewController.swift in Sources */,
+				067BB9BC26DCBF1900253E23 /* ArtistModel.swift in Sources */,
 				067BB9B826DCBE7000253E23 /* MusicItem.swift in Sources */,
 				0672BF4026956D3000DAA4C9 /* LoginViewController.swift in Sources */,
 				067BB9A826DCB8A100253E23 /* RankingViewController.swift in Sources */,
@@ -766,20 +801,25 @@
 				067BB9AD26DCB93B00253E23 /* ArtistDetailViewController.swift in Sources */,
 				06BB4F23268C34F1002B8576 /* HomeViewModel.swift in Sources */,
 				06F5808726D4B6E600161B80 /* RecommendTableViewCell.swift in Sources */,
+				067BB9C126DCBF5200253E23 /* RankingModel.swift in Sources */,
 				0672BF4B269574FF00DAA4C9 /* AccountSettingModel.swift in Sources */,
 				06A105EA269E7FD100B27A0C /* GenreViewController.swift in Sources */,
+				067BB9C526DCBF8C00253E23 /* RankingViewModel.swift in Sources */,
 				067BB9B626DCBE4C00253E23 /* ArtistMusicModel.swift in Sources */,
 				067BB9B126DCBD7000253E23 /* ArtistDetailViewModel.swift in Sources */,
 				06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */,
 				0672BF332695683E00DAA4C9 /* BaseViewController.swift in Sources */,
 				0672BF492695726D00DAA4C9 /* LoginViewModel.swift in Sources */,
 				06A105F2269E92E000B27A0C /* FirestoreModel.swift in Sources */,
+				067BB9BF26DCBF2500253E23 /* ArtistItem.swift in Sources */,
 				06BB4F26268C3C13002B8576 /* MusicViewController.swift in Sources */,
 				0672BF472695726400DAA4C9 /* RegisterViewModel.swift in Sources */,
 				06BB4EC626899852002B8576 /* SceneDelegate.swift in Sources */,
 				0672BF362695688900DAA4C9 /* StartViewController.swift in Sources */,
+				067BB9C326DCBF6100253E23 /* RankingItem.swift in Sources */,
 				0672BF3B26956CFE00DAA4C9 /* RegisterViewController.swift in Sources */,
 				06BB4F1D268C1296002B8576 /* ArtistCollectionViewCell.swift in Sources */,
+				067BB9BA26DCBEFC00253E23 /* ArtistViewModel.swift in Sources */,
 				06A105EE269E803D00B27A0C /* AccountSettingViewModel.swift in Sources */,
 				06BB4EF5268999D1002B8576 /* HomeViewController.swift in Sources */,
 				06BB4F022689A6E8002B8576 /* FavoriteViewController.swift in Sources */,
