@@ -22,14 +22,18 @@ class MusicViewModel {
   private var _input: MusicViewModel.Input!
   private var _output: MusicViewModel.Output!
   
+  private let model = HistoryModel()
+  private let disposeBag = DisposeBag()
+  
   init(trigger: MusicViewModel.Input) {
     _input = trigger
     _output = MusicViewModel.Output.init()
+    
+    model.insertHistoryData()
   }
   
-  
   // MARK: -- OUTPUT
-  func output() -> HomeViewModel.Output {
+  func output() -> MusicViewModel.Output {
     return _output
   }
   

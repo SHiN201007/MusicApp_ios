@@ -21,6 +21,7 @@ class MusicViewController: UIViewController {
   @IBOutlet weak var beforeImageView: UIImageView!
   @IBOutlet weak var afterImageView: UIImageView!
   
+  private var viewModel: MusicViewModel!
   private let disposeBag = DisposeBag()
   
   // tapGuesture
@@ -29,8 +30,14 @@ class MusicViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupViewModel()
     setupSlider()
     setupTapGuesture()
+  }
+  
+  private func setupViewModel() {
+    let input = MusicViewModel.Input()
+    viewModel = MusicViewModel(trigger: input)
   }
   
   private func setupSlider() {

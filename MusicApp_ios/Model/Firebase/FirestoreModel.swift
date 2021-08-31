@@ -57,7 +57,7 @@ class Histories: Object {
   var data: history?
   
   struct history: Modelable & Codable {
-    var musicId: String = ""
+    var histry_music_id: String = ""
   }
 }
 

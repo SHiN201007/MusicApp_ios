@@ -72,6 +72,7 @@
 		06F5808E26D4C53000161B80 /* DecimalStyleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808D26D4C53000161B80 /* DecimalStyleUtils.swift */; };
 		06FA6B5A26DD4E25004CE31D /* FirebaseStorageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA6B5926DD4E25004CE31D /* FirebaseStorageUtil.swift */; };
 		06FA6B5C26DE0117004CE31D /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA6B5B26DE0117004CE31D /* MusicViewModel.swift */; };
+		06FA6B5F26DE0256004CE31D /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA6B5E26DE0256004CE31D /* HistoryModel.swift */; };
 		096BABDC86962888E0987FA8 /* Pods_MusicApp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3C2ED490553BAFC59D9BD9 /* Pods_MusicApp_ios.framework */; };
 		3273E7CFE183C726FCEB985D /* libPods-MusicApp_iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8375A61FD8DF1E419B09A2 /* libPods-MusicApp_iosUITests.a */; };
 		5EE38069A54068CC75CB85BE /* libPods-MusicApp_iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B180DABDA4C5D91D17B85093 /* libPods-MusicApp_iosTests.a */; };
@@ -166,6 +167,7 @@
 		06F5808D26D4C53000161B80 /* DecimalStyleUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalStyleUtils.swift; sourceTree = "<group>"; };
 		06FA6B5926DD4E25004CE31D /* FirebaseStorageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageUtil.swift; sourceTree = "<group>"; };
 		06FA6B5B26DE0117004CE31D /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
+		06FA6B5E26DE0256004CE31D /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		2DDC62A9167A07F59DAD5BD2 /* Pods-MusicApp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosTests/Pods-MusicApp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BA3F46B636B9DA8824E03B /* Pods-MusicApp_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosUITests/Pods-MusicApp_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		796FD70C89CD08017751DBEC /* Pods-MusicApp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_ios.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_ios/Pods-MusicApp_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				067BB9B426DCBE2700253E23 /* ArtistDetail */,
 				067BB9C626DCBFAB00253E23 /* Ranking */,
 				067BB9D326DD34E200253E23 /* Reccommend */,
+				06FA6B5D26DE0209004CE31D /* Music */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -530,6 +533,14 @@
 				06F5808D26D4C53000161B80 /* DecimalStyleUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		06FA6B5D26DE0209004CE31D /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				06FA6B5E26DE0256004CE31D /* HistoryModel.swift */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		236EFC313C7F65A221A45F2F /* Frameworks */ = {
@@ -820,6 +831,7 @@
 				0672BF442695720E00DAA4C9 /* AuthObject.swift in Sources */,
 				067BB9AD26DCB93B00253E23 /* ArtistDetailViewController.swift in Sources */,
 				06BB4F23268C34F1002B8576 /* HomeViewModel.swift in Sources */,
+				06FA6B5F26DE0256004CE31D /* HistoryModel.swift in Sources */,
 				06F5808726D4B6E600161B80 /* RecommendTableViewCell.swift in Sources */,
 				067BB9C126DCBF5200253E23 /* RankingModel.swift in Sources */,
 				0672BF4B269574FF00DAA4C9 /* AccountSettingModel.swift in Sources */,
