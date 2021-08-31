@@ -70,6 +70,7 @@
 		06F5808826D4B6E600161B80 /* RecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5808626D4B6E600161B80 /* RecommendTableViewCell.xib */; };
 		06F5808B26D4B83400161B80 /* ReccomendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808A26D4B83400161B80 /* ReccomendViewModel.swift */; };
 		06F5808E26D4C53000161B80 /* DecimalStyleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5808D26D4C53000161B80 /* DecimalStyleUtils.swift */; };
+		06FA6B5A26DD4E25004CE31D /* FirebaseStorageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA6B5926DD4E25004CE31D /* FirebaseStorageUtil.swift */; };
 		096BABDC86962888E0987FA8 /* Pods_MusicApp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3C2ED490553BAFC59D9BD9 /* Pods_MusicApp_ios.framework */; };
 		3273E7CFE183C726FCEB985D /* libPods-MusicApp_iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8375A61FD8DF1E419B09A2 /* libPods-MusicApp_iosUITests.a */; };
 		5EE38069A54068CC75CB85BE /* libPods-MusicApp_iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B180DABDA4C5D91D17B85093 /* libPods-MusicApp_iosTests.a */; };
@@ -162,6 +163,7 @@
 		06F5808626D4B6E600161B80 /* RecommendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendTableViewCell.xib; sourceTree = "<group>"; };
 		06F5808A26D4B83400161B80 /* ReccomendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendViewModel.swift; sourceTree = "<group>"; };
 		06F5808D26D4C53000161B80 /* DecimalStyleUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalStyleUtils.swift; sourceTree = "<group>"; };
+		06FA6B5926DD4E25004CE31D /* FirebaseStorageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageUtil.swift; sourceTree = "<group>"; };
 		2DDC62A9167A07F59DAD5BD2 /* Pods-MusicApp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosTests/Pods-MusicApp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BA3F46B636B9DA8824E03B /* Pods-MusicApp_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_iosUITests/Pods-MusicApp_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		796FD70C89CD08017751DBEC /* Pods-MusicApp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp_ios.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp_ios/Pods-MusicApp_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				06A105F1269E92E000B27A0C /* FirestoreModel.swift */,
+				06FA6B5926DD4E25004CE31D /* FirebaseStorageUtil.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				067BB9B126DCBD7000253E23 /* ArtistDetailViewModel.swift in Sources */,
 				06BB4F0B2689AA49002B8576 /* UIColorExtension.swift in Sources */,
 				0672BF332695683E00DAA4C9 /* BaseViewController.swift in Sources */,
+				06FA6B5A26DD4E25004CE31D /* FirebaseStorageUtil.swift in Sources */,
 				0672BF492695726D00DAA4C9 /* LoginViewModel.swift in Sources */,
 				06A105F2269E92E000B27A0C /* FirestoreModel.swift in Sources */,
 				067BB9BF26DCBF2500253E23 /* ArtistItem.swift in Sources */,

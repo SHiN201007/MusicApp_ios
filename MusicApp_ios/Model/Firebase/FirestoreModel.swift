@@ -67,6 +67,7 @@ class Musics: Object {
   
   struct music: Modelable & Codable {
     var name: String = ""
+    var artistId: String = ""
   }
 }
 
@@ -88,6 +89,5 @@ class Artists: Object {
   
   struct artist: Modelable & Codable {
     var name: String = ""
-    var thumbnailURL: String = ""
   }
 }

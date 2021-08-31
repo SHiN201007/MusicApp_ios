@@ -117,6 +117,17 @@ class HomeViewController: BaseViewController {
   private var viewModel: HomeViewModel!
   private let disposeBag = DisposeBag()
   
+  
+  private let artistItems = [
+    ArtistItem(name: "ONE OK ROCK", thumbnailImage: "oneokrock"),
+    ArtistItem(name: "嵐", thumbnailImage: "arasi"),
+    ArtistItem(name: "BTS", thumbnailImage: "bts"),
+    ArtistItem(name: "Official髭男dism", thumbnailImage: "higedan"),
+    ArtistItem(name: "NiziU", thumbnailImage: "niziu"),
+    ArtistItem(name: "UVERworld", thumbnailImage: "uverworld"),
+    ArtistItem(name: "WANIMA", thumbnailImage: "wanima"),
+  ]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
@@ -264,17 +275,17 @@ class HomeViewController: BaseViewController {
   // sample recommend
   private func setupRecommedData() {
     recommend1MusicImageView.image = UIImage(named: "oneokrock")
-    recommend2MusicImageView.image = UIImage(named: "oneokrock")
-    recommend3MusicImageView.image = UIImage(named: "oneokrock")
-    recommend4MusicImageView.image = UIImage(named: "oneokrock")
+    recommend2MusicImageView.image = UIImage(named: "higedan")
+    recommend3MusicImageView.image = UIImage(named: "niziu")
+    recommend4MusicImageView.image = UIImage(named: "uverworld")
   }
   // sample ranking
   private func setupRankingData() {
-    ranking1MusicImageView.image = UIImage(named: "oneokrock")
-    ranking2MusicImageView.image = UIImage(named: "oneokrock")
-    ranking3MusicImageView.image = UIImage(named: "oneokrock")
+    ranking1MusicImageView.image = UIImage(named: "niziu")
+    ranking2MusicImageView.image = UIImage(named: "bts")
+    ranking3MusicImageView.image = UIImage(named: "higedan")
     ranking4MusicImageView.image = UIImage(named: "oneokrock")
-    ranking5MusicImageView.image = UIImage(named: "oneokrock")
+    ranking5MusicImageView.image = UIImage(named: "uverworld")
     // compare
     let current = UIImage(named: "compare_current")
     let up = UIImage(named: "compare_up")
@@ -423,15 +434,18 @@ extension HomeViewController {
 }
 // MARK: -- UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return artistItems.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCell", for: indexPath) as! ArtistCollectionViewCell
     
-    cell.artistImageView.image = UIImage(named: "oneokrock")
-    cell.artistNameLabel.text = "ONE OK ROCK"
+    let item = artistItems[indexPath.row]
+    
+    cell.artistImageView.image = UIImage(named: item.thumbnailImage)
+    cell.artistNameLabel.text = item.name
     
     return cell
   }

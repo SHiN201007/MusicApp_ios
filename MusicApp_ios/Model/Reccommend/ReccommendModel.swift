@@ -39,14 +39,14 @@ class RecommendModel {
         dispatchQueue.async(group: dispatchGroup) { [weak self] in
           self?.getData(musicId: musicId) {
             print("error")
-          } succsess: { title in
+          } succsess: { title, artistName in
             data.append(
               SectionRecommend(
                 items: [
                   SectionRecommend.Item(
-                    musicImage: "oneokrock",
+                    musicImage: musicId,
                     title: title,
-                    artist: "artist",
+                    artist: artistName,
                     preview: 100000)
                 ]
               )
@@ -63,20 +63,42 @@ class RecommendModel {
     }
   }
   
-  func getData(musicId: String, failure: @escaping() -> Void, succsess: @escaping(String) -> Void) {
+  func getData(musicId: String, failure: @escaping() -> Void, succsess: @escaping(String, String) -> Void) {
     let ref = db.collection("Music").document(musicId)
-    Document<Musics.music>.get(documentReference: ref, completion: { document, error in
+    Document<Musics.music>.get(documentReference: ref, completion: { [weak self] document, error in
       if let _error = error {
         print("error", _error)
         failure()
       }
       if let _document = document,
-         let title = _document.data?.name {
-        succsess(title)
+         let title = _document.data?.name,
+         let artistId = _document.data?.artistId {
+        // Get Artist Name
+        print("artistID:", artistId)
+        self?.getArtistData(artistId: artistId) {
+          failure()
+        } succsess: { name in
+          succsess(title, name)
+        }
       }else {
         failure()
       }
     })
   }
   
+  func getArtistData(artistId: String, failure: @escaping() -> Void, succsess: @escaping(String) -> Void) {
+    let ref = db.collection("Artist").document(artistId)
+    Document<Artists.artist>.get(documentReference: ref, completion: { document, error in
+      if let _error = error {
+        print("error", _error)
+        failure()
+      }
+      if let _document = document,
+         let name = _document.data?.name {
+        succsess(name)
+      }else {
+        failure()
+      }
+    })
+  }
 }

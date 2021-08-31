@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Firebase
+import FirebaseUI
 
 class RecommendViewController: UIViewController {
   
@@ -23,7 +25,10 @@ class RecommendViewController: UIViewController {
     (dataSource, tableView, indexPath, item) in
     let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendTableViewCell", for: indexPath) as! RecommendTableViewCell
     
-    cell.recommendMusicImageView.image = UIImage(named: item.musicImage)
+    let storage = Storage.storage().reference(forURL: FirebaseStorageUtil.shared.storage())
+    let imageRef = storage.child("musics").child("\(item.musicImage).jpeg")
+    
+    cell.recommendMusicImageView.sd_setImage(with: imageRef, placeholderImage: UIImage(named: "oneokrock"))
     cell.recommendTitleLabel.text = item.title
     cell.recommendArtistLabel.text = item.artist
     
